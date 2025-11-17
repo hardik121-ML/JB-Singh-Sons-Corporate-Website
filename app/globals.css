@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-orange-1: 237 76 34;
+    --color-orange-alt: 235 110 56;
+    --color-navy: 0 50 75;
+    --color-dark-1: 26 26 26;
+    --color-light-1: 248 248 248;
+  }
+
+  body {
+    @apply bg-white text-neutral-dark;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
