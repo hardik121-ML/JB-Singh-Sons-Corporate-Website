@@ -10,7 +10,7 @@ A modern, responsive corporate website for J B Singh & Sons, a logistics service
 - **Animations**: Framer Motion
 - **Forms**: React Hook Form + EmailJS
 - **SEO**: next-sitemap
-- **Deployment**: TBD (Recommended: Vercel)
+- **Deployment**: Vercel (https://jbsingh-website.vercel.app)
 
 ## 📋 Features
 
@@ -158,10 +158,12 @@ npm run postbuild
 ## 🎨 Design System
 
 ### Colors
-- **Primary Orange**: `#ED4C22` / `#EB6E38`
+- **Primary Red**: `#FF0000` (pure red - brand color matching logo)
 - **Navy Blue**: `#00324B`
 - **Dark**: `#1a1a1a`
 - **Light**: `#f8f8f8`
+
+**Note**: All uses of `primary-orange` class render as red (#FF0000), not orange
 
 ### Typography
 - **Font**: Inter (Google Fonts)
@@ -269,6 +271,30 @@ npm run build
 - `PLAN.md` - Complete project plan and specifications
 - `PLACEHOLDERS.md` - Assets needed from client
 - `OUT_OF_SCOPE.md` - Features for future implementation
+- `CLAUDE.md` - Codebase guidance for Claude Code
+
+## 🚀 Deployment
+
+**Production Site**: https://jbsingh-website.vercel.app
+**GitHub Repository**: https://github.com/hardik121-ML/JB-Singh-Sons-Corporate-Website
+**Platform**: Vercel (auto-deploy enabled on `git push`)
+
+### Deployment Workflow
+
+The site uses continuous deployment via Vercel:
+
+```bash
+# Make changes locally and test
+npm run dev
+
+# Commit and push to GitHub
+git add .
+git commit -m "description of changes"
+git push
+
+# Vercel automatically deploys in ~2 minutes
+# No manual intervention needed
+```
 
 ## 🤝 Contributing
 

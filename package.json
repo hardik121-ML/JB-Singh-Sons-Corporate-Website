@@ -2,6 +2,12 @@
   "name": "jbsingh-website",
   "version": "0.1.0",
   "private": true,
+  "description": "Modern logistics website for J B Singh & Sons",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hardik121-ML/JB-Singh-Sons-Corporate-Website.git"
+  },
+  "homepage": "https://jbsingh-website.vercel.app",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
