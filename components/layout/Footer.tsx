@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { COMPANY_INFO, FOOTER_LINKS } from "@/lib/constants";
 import Container from "@/components/ui/Container";
 
@@ -11,9 +12,18 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
           {/* Company Info */}
           <div>
-            <h3 className="text-xl font-bold mb-4 text-primary-orange">
-              J B Singh & Sons
-            </h3>
+            <div className="flex items-center space-x-3 mb-4">
+              <Image
+                src="/Logo.png"
+                alt="J B Singh & Sons Logo"
+                width={72}
+                height={72}
+                className="w-16 h-16 md:w-18 md:h-18"
+              />
+              <h3 className="text-xl font-bold text-primary-orange">
+                J B Singh & Sons
+              </h3>
+            </div>
             <p className="text-sm text-gray-300 leading-relaxed">
               Delivering seamless movement of goods across borders with accuracy,
               reliability, and a commitment to operational excellence since {COMPANY_INFO.established}.

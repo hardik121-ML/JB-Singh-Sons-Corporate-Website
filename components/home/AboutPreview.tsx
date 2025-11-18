@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Button from "@/components/ui/Button";
 import Section from "@/components/ui/Section";
 
@@ -22,22 +23,34 @@ export default function AboutPreview() {
           </Link>
         </div>
 
-        {/* Image Carousel Placeholder */}
+        {/* Image Carousel */}
         <div className="space-y-4">
           <div className="grid grid-cols-2 gap-4">
-            <div className="aspect-square bg-gray-200 rounded-2xl flex items-center justify-center text-gray-400 text-sm p-4 text-center">
-              Image 1<br />(Warehouse/Office)
+            <div className="relative aspect-square rounded-2xl overflow-hidden bg-gray-100">
+              <Image
+                src="/images/placeholders/Image 1 WarehouseOffice.png"
+                alt="J B Singh & Sons warehouse and office facility"
+                fill
+                className="object-contain"
+              />
             </div>
-            <div className="aspect-square bg-gray-200 rounded-2xl flex items-center justify-center text-gray-400 text-sm p-4 text-center">
-              Image 2<br />(Team/Operations)
+            <div className="relative aspect-square rounded-2xl overflow-hidden bg-gray-100">
+              <Image
+                src="/images/placeholders/Image 2 Team Operations.png"
+                alt="J B Singh & Sons team and operations"
+                fill
+                className="object-contain"
+              />
             </div>
           </div>
-          <div className="aspect-[2/1] bg-gray-200 rounded-2xl flex items-center justify-center text-gray-400 text-sm p-4 text-center">
-            Image 3 (Wide - Equipment/Cargo)
+          <div className="relative aspect-[2/1] rounded-2xl overflow-hidden">
+            <Image
+              src="/images/placeholders/Image 3 Wide Equipment Cargo.png"
+              alt="J B Singh & Sons equipment and cargo operations"
+              fill
+              className="object-cover"
+            />
           </div>
-          <p className="text-xs text-gray-400 text-center">
-            [3-image carousel - Pending from client]
-          </p>
         </div>
       </div>
     </Section>

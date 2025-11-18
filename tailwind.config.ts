@@ -10,8 +10,8 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          orange: '#ED4C22',
-          'orange-alt': '#EB6E38',
+          orange: '#FF0000',
+          'orange-alt': '#FF0000',
           navy: '#00324B',
         },
         neutral: {

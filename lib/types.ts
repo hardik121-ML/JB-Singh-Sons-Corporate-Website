@@ -6,6 +6,7 @@ export interface Service {
   capabilities: string[];
   icon: string;
   slug: string;
+  serviceType: "core" | "partner";
 }
 
 export interface Solution {

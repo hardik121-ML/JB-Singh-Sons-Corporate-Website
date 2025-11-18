@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { NAV_LINKS } from "@/lib/constants";
@@ -38,8 +39,16 @@ export default function Header() {
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="text-xl md:text-2xl font-bold text-primary-orange">
+          <Link href="/" className="flex items-center space-x-3">
+            <Image
+              src="/Logo.png"
+              alt="J B Singh & Sons Logo"
+              width={80}
+              height={80}
+              className="w-16 h-16 md:w-20 md:h-20"
+              priority
+            />
+            <div className="text-lg md:text-xl font-bold text-primary-orange">
               J B Singh & Sons
             </div>
           </Link>

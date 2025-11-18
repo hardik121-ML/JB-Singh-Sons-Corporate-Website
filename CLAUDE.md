@@ -25,6 +25,18 @@ npm run lint            # Run ESLint
 # Sitemap generation runs automatically after build via postbuild script
 ```
 
+## Key Dependencies
+
+- **Framework**: Next.js 14 (App Router) - React framework with SSG
+- **Language**: TypeScript 5.6 - Type-safe JavaScript
+- **Styling**: Tailwind CSS 3.4 - Utility-first CSS framework
+- **Class Management**: clsx + tailwind-merge - Dynamic className handling via `cn()` utility
+- **Icons**: Phosphor Icons 2.1 - Icon library for service icons
+- **Animations**: Framer Motion 12 - Motion library (used sparingly)
+- **Forms**: React Hook Form 7 - Form validation and state management
+- **Email**: EmailJS 4 - Client-side email sending for contact form
+- **SEO**: next-sitemap 4 - Sitemap and robots.txt generation
+
 ## Architecture & Key Patterns
 
 ### Content Management Strategy
@@ -46,8 +58,8 @@ npm run lint            # Run ESLint
 All 9 service pages follow an identical pattern:
 1. Each service has a route in `/app/services/[service-slug]/page.tsx`
 2. All use the shared `<ServiceTemplate>` component (`/components/services/ServiceTemplate.tsx`)
-3. Service data is fetched from `SERVICES` array using `.find(s => s.id === "service-id")`
-4. Metadata is defined per-page for SEO
+3. Service data is fetched from `SERVICES` array using `.find(s => s.id === "service-id")!` (non-null assertion is safe because service IDs are hardcoded)
+4. Metadata is defined per-page for SEO (title and description extracted from service data)
 
 **Adding a new service**:
 1. Add entry to `SERVICES` in `constants.ts`
@@ -63,16 +75,30 @@ All 9 service pages follow an identical pattern:
 **UI Primitives** (`/components/ui/`):
 - `Button`, `Card`, `Container`, `Section`, `Input`, `Textarea`
 - Use `cn()` utility from `/lib/utils.ts` for className merging (clsx + tailwind-merge)
+- All UI components accept standard React props and use TypeScript for prop typing
 
 **Page Sections** (`/components/home/`, `/components/services/`, `/components/contact/`):
 - Home page is composed of 5 distinct sections (Hero, StatsBlock, AboutPreview, ServicesGrid, CSRPreview)
 - Each section is self-contained and reusable
 
+**ServicesGrid Component** (`/components/home/ServicesGrid.tsx`):
+- Services are displayed in two horizontal scrolling carousels
+- **Core Services** (4): Custom Clearance, Project Management, Transportation, Equipment Hire
+- **Partner Network** (5): Freight Forwarding, Marine Logistics, Warehousing, Domestic Express, Cross Trade
+- Auto-scrolling animation with pause-on-hover functionality
+- Each service uses Phosphor Icons (imported dynamically by icon name from constants)
+- Service cards have gradient backgrounds and left accent borders matching service type
+
 **Design System**:
 - Colors defined in `tailwind.config.ts` and `app/globals.css`
-- Primary orange: `#ED4C22` / `#EB6E38`
+- Primary red: `#FF0000` (pure red - brand color matching logo)
 - Navy: `#00324B`
-- Responsive typography uses viewport units: `text-responsive-xl` = `max(1.5rem, 2vmax)`
+- **Important**: All uses of `primary-orange` class now render as red (#FF0000), not orange
+- Logo: `/public/Logo.png` (circular badge with ship and JBS branding)
+- Responsive typography uses viewport units with fallbacks: `text-responsive-xl` = `max(1.5rem, 2vmax)`
+  - All responsive text sizes use `max(fixed-size, viewport-size)` to ensure minimum readable size
+  - Custom spacing: `4vmax` = `max(2rem, 4vmax)`, `2.5vmax` = `max(1.25rem, 2.5vmax)`
+  - Border radius also responsive: `rounded-1vmax` = `max(0.625rem, 1vmax)`
 
 ### Form Handling (Contact Page)
 
@@ -103,10 +129,18 @@ The site will build and run without these, but contact form won't send emails un
 ### TypeScript Types
 
 Defined in `/lib/types.ts`:
-- `Service` - Service page data structure
+- `Service` - Service page data structure (includes `serviceType: "core" | "partner"`)
 - `Solution` - Solution block structure
 - `ContactFormData` - Contact form fields
 - All components use proper TypeScript typing
+
+### Icon System
+
+Uses Phosphor Icons loaded dynamically:
+- Service icons defined as string names in `SERVICES` array in `constants.ts`
+- Icons imported via `@phosphor-icons/react` and rendered dynamically
+- All icons use `weight="duotone"` for consistent style
+- Icon names: `FileText`, `ChartBar`, `Truck`, `Wrench`, `GlobeHemisphereWest`, `Boat`, `Warehouse`, `Lightning`, `ArrowsLeftRight`
 
 ### SEO Implementation
 
@@ -115,18 +149,43 @@ Defined in `/lib/types.ts`:
 - Sitemap URL structure: `https://jbsingh.com` (update `SITE_URL` env var for production)
 - All images should have alt text (currently placeholders exist)
 
-### Asset Placeholders
+### Asset Management
 
-**Images and icons are NOT included**. See `PLACEHOLDERS.md` for complete list:
-- Logo (SVG) - currently text-based in header
-- 9 service icons (SVG) - currently colored boxes
-- Photos: warehouse (3-5), office (2-3), team (4-8), CSR initiatives (6+)
-- Statistics: Monthly cargo movements, team size, routes (marked with "X,XXX+" placeholders)
+**Asset Location**: `/public/images/placeholders/`
 
-**When client provides assets**:
-1. Place in `/public/images/` or `/public/icons/`
-2. Update component imports (e.g., Hero, AboutPreview, team section in About page)
-3. Update `STATS` in `constants.ts` with real numbers
+**Current Image Status**:
+- ✅ Hero logistics illustration - `Logistics Illustration Placeholder - ContainersCranesShips.png`
+- ✅ Home page carousel images (3 images in AboutPreview component)
+- ✅ Logo - `/public/Logo.png` (PNG, integrated in header and footer)
+- ✅ Service icons - Using Phosphor Icons library (dynamically loaded)
+- ⏳ CSR initiative photos
+- ⏳ Team photos for About page
+
+**Image Dimension Guidelines**:
+
+When replacing images, use these dimensions for optimal display without borders:
+
+1. **Home Page (AboutPreview component)**:
+   - Images 1 & 2 (square grid): **1024 x 1024** (1:1 ratio)
+   - Image 3 (wide bottom): **1536 x 1024** (3:2 ratio) with `object-cover`, or **2048 x 1024** (2:1 ratio) with `object-contain`
+
+2. **Hero Section**:
+   - Aspect ratio: 16:9 (video aspect)
+   - Recommended: 1920 x 1080 or 1600 x 900
+
+3. **General Guidelines**:
+   - Use `object-contain` when you want the full image visible (may show borders if aspect ratio doesn't match)
+   - Use `object-cover` when you want to fill the container (may crop parts of image)
+   - Always use Next.js `Image` component with `fill` prop for responsive containers
+   - Add `priority` prop for above-the-fold images (Hero section)
+
+**When adding/replacing images**:
+1. Place images in `/public/images/placeholders/`
+2. Check dimensions using: `file /path/to/image.png`
+3. Update component to use `Image` from `next/image`
+4. Choose appropriate `object-fit` class (`object-contain` vs `object-cover`)
+5. Add descriptive alt text for accessibility
+6. Update `STATS` in `constants.ts` if replacing statistical placeholders
 
 ### Responsive Breakpoints
 
@@ -161,7 +220,16 @@ Do not implement these without explicit client approval and updated requirements
 
 1. `npm run build` compiles Next.js app
 2. `postbuild` script auto-runs `next-sitemap` to generate `/public/sitemap.xml` and `/public/robots.txt`
-3. All 21 routes are statically generated (SSG)
+3. All routes are statically generated (SSG):
+   - 1 home page
+   - 1 about page
+   - 1 services overview + 9 individual service pages (10 total)
+   - 1 solutions page
+   - 1 CSR page
+   - 1 careers page
+   - 1 contact page
+   - 2 legal pages (terms, privacy)
+   - **Total: 18 routes**
 4. Build output shows route sizes (should all be <110 kB First Load JS)
 
 **Build errors to watch for**:
@@ -169,12 +237,66 @@ Do not implement these without explicit client approval and updated requirements
 - ESLint errors (disabled `react/no-unescaped-entities` for content with apostrophes)
 - Missing environment variables (warnings only, won't fail build)
 
-## Deployment Notes
+## Common Development Issues
 
-**Recommended Platform**: Vercel (seamless Next.js integration)
+### ChunkLoadError in Browser
+If you see "ChunkLoadError: Loading chunk app/layout failed" during development:
+```bash
+# Stop dev server, clear cache, restart
+rm -rf .next
+npm run dev
+```
+Then hard refresh browser: `Ctrl+Shift+R` (Windows/Linux) or `Cmd+Shift+R` (Mac)
 
-Pre-deployment checklist:
-1. Configure EmailJS credentials in environment
+**Note**: This is a local development issue only. Vercel production builds are not affected.
+
+### Slow Page Navigation in Development
+Next.js compiles pages on-demand during development (first visit can take 5-20 seconds). This is **normal behavior** and will NOT happen in production where all pages are pre-compiled during build. To test production speed: `npm run build && npm run start`
+
+### Color/Style Changes Not Appearing
+If Tailwind color changes aren't appearing after updating `tailwind.config.ts`:
+1. Clear Next.js cache: `rm -rf .next`
+2. Restart dev server
+3. Hard refresh browser: `Ctrl+Shift+R` or `Cmd+Shift+R`
+4. Try incognito/private window to bypass browser cache entirely
+
+## Deployment
+
+**Production Site**: https://jbsingh-website.vercel.app
+**GitHub Repository**: https://github.com/hardik121-ML/JB-Singh-Sons-Corporate-Website
+**Platform**: Vercel (auto-deploy enabled on `git push`)
+
+### Deployment Workflow
+
+The site uses continuous deployment via Vercel:
+
+```bash
+# Make changes locally and test
+npm run dev
+
+# Commit and push to GitHub
+git add .
+git commit -m "description of changes"
+git push
+
+# Vercel automatically deploys in ~2 minutes
+# No manual intervention needed
+```
+
+### Environment Variables (Vercel Dashboard)
+
+Add these in Vercel Project Settings → Environment Variables:
+- `NEXT_PUBLIC_EMAILJS_SERVICE_ID`
+- `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID`
+- `NEXT_PUBLIC_EMAILJS_PUBLIC_KEY`
+- `NEXT_PUBLIC_RECAPTCHA_SITE_KEY` (optional)
+- `SITE_URL` (set to production domain)
+
+After adding/updating environment variables, redeploy from Vercel dashboard.
+
+### Pre-deployment Checklist
+
+1. Configure EmailJS credentials in Vercel environment
 2. Set production `SITE_URL`
 3. Verify all client assets replaced placeholders
 4. Update Terms & Privacy Policy with legal content

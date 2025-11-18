@@ -4,8 +4,8 @@
 
 @layer base {
   :root {
-    --color-orange-1: 237 76 34;
-    --color-orange-alt: 235 110 56;
+    --color-orange-1: 255 0 0;
+    --color-orange-alt: 255 0 0;
     --color-navy: 0 50 75;
     --color-dark-1: 26 26 26;
     --color-light-1: 248 248 248;
@@ -24,5 +24,36 @@
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  /* Hide scrollbar for horizontal scrolling */
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari and Opera */
+  }
+
+  /* Auto-scroll animations for service carousels */
+  @keyframes scroll-left {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-33.333%);
+    }
+  }
+
+  .animate-scroll-core {
+    animation: scroll-left 30s linear infinite;
+  }
+
+  .animate-scroll-partner {
+    animation: scroll-left 40s linear infinite;
+  }
+
+  .hover\:animation-pause:hover {
+    animation-play-state: paused;
   }
 }

@@ -48,8 +48,9 @@ export const SERVICES = [
       "Cost and time optimisation",
       "Status updates (if enabled)",
     ],
-    icon: "freight",
+    icon: "GlobeHemisphereWest",
     slug: "/services/freight-forwarding",
+    serviceType: "partner" as const,
   },
   {
     id: "custom-clearance",
@@ -63,8 +64,9 @@ export const SERVICES = [
       "Coordination with customs offices",
       "Document filing and verification",
     ],
-    icon: "customs",
+    icon: "FileText",
     slug: "/services/custom-clearance",
+    serviceType: "core" as const,
   },
   {
     id: "project-management",
@@ -78,8 +80,9 @@ export const SERVICES = [
       "Route engineering",
       "Supervised execution",
     ],
-    icon: "project",
+    icon: "ChartBar",
     slug: "/services/project-management",
+    serviceType: "core" as const,
   },
   {
     id: "marine-logistics",
@@ -93,8 +96,9 @@ export const SERVICES = [
       "Cargo transfers",
       "Marine compliance",
     ],
-    icon: "marine",
+    icon: "Boat",
     slug: "/services/marine-logistics",
+    serviceType: "partner" as const,
   },
   {
     id: "transportation-service",
@@ -108,8 +112,9 @@ export const SERVICES = [
       "Multi-city routing",
       "Fleet coordination",
     ],
-    icon: "transport",
+    icon: "Truck",
     slug: "/services/transportation-service",
+    serviceType: "core" as const,
   },
   {
     id: "equipment-hire",
@@ -122,8 +127,9 @@ export const SERVICES = [
       "Loaders",
       "Specialised equipment (exact list needed)",
     ],
-    icon: "equipment",
+    icon: "Wrench",
     slug: "/services/equipment-hire",
+    serviceType: "core" as const,
   },
   {
     id: "warehousing-distribution",
@@ -137,8 +143,9 @@ export const SERVICES = [
       "Short and long-term storage",
       "Distribution planning",
     ],
-    icon: "warehouse",
+    icon: "Warehouse",
     slug: "/services/warehousing-distribution",
+    serviceType: "partner" as const,
   },
   {
     id: "domestic-express",
@@ -151,8 +158,9 @@ export const SERVICES = [
       "Nationwide coverage",
       "Door-to-door service",
     ],
-    icon: "express",
+    icon: "Lightning",
     slug: "/services/domestic-express",
+    serviceType: "partner" as const,
   },
   {
     id: "cross-trade-services",
@@ -165,8 +173,9 @@ export const SERVICES = [
       "Carrier liaison",
       "Shipment tracking",
     ],
-    icon: "cross-trade",
+    icon: "ArrowsLeftRight",
     slug: "/services/cross-trade-services",
+    serviceType: "partner" as const,
   },
 ];
 
