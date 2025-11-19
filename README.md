@@ -15,12 +15,12 @@ A modern, responsive corporate website for J B Singh & Sons, a logistics service
 ## 📋 Features
 
 - ✅ Fully responsive design (mobile-first)
-- ✅ 11 pages with SEO optimization
+- ✅ 17 pages with SEO optimization
 - ✅ Sticky navigation with mobile menu
 - ✅ Contact form with email delivery (EmailJS)
-- ✅ Service detail pages (9 services)
+- ✅ Service detail pages (8 services)
+- ✅ Responsive service carousels (manual scroll on mobile/tablet, auto-scroll on desktop)
 - ✅ Solutions page
-- ✅ CSR/ESG page
 - ✅ Careers page
 - ✅ Modern UI with Tailwind CSS
 - ✅ TypeScript for type safety
@@ -130,16 +130,15 @@ npm run postbuild
 - **Careers** (`/careers`) - Job listings (dynamic)
 - **Contact** (`/contact`) - Contact form and details
 
-### Service Pages (9)
+### Service Pages (8)
 1. Freight Forwarding
-2. Custom Clearance
-3. Project Management / Break Bulk Movement
-4. Marine Logistics
-5. Transportation Service
-6. Equipment Hire
-7. Warehousing & Distribution
-8. Domestic Express
-9. Cross Trade Services
+2. Project Management & Custom Clearance (combined service)
+3. Marine Logistics
+4. Transportation Service
+5. Equipment Hire
+6. Warehousing & Distribution
+7. Domestic Express
+8. Cross Trade Services
 
 ### Footer Pages
 - Terms and Conditions
@@ -250,7 +249,7 @@ npm run build
 
 **Company**: J B Singh & Sons
 **Website**: www.jbsinghnsons.com
-**Email**: enquiry@jbsinghnsons.com
+**Email**: jbsinghnhsons2005@hotmail.com
 **Telephone**: 2773 2400
 **Mobile**: +91 98204 56539
 

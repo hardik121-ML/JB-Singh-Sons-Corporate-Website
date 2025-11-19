@@ -313,7 +313,7 @@ Maharashtra, India
 **Contact Details**:
 - Telephone: 2773 2400
 - Mobile: +91 98204 56539
-- Email: enquiry@jbsinghnsons.com
+- Email: jbsinghnhsons2005@hotmail.com
 - Website: www.jbsinghnsons.com
 
 **Google Maps Embed**: Interactive map
@@ -340,7 +340,7 @@ Maharashtra, India
 - EmailJS or Formspree for email delivery
 - Client-side validation
 - Success/error states
-- Form submission to admin email: enquiry@jbsinghnsons.com
+- Form submission to admin email: jbsinghnhsons2005@hotmail.com
 - Store submissions (future: integrate with CMS or database)
 
 ### 4.2 Responsive Design
@@ -667,7 +667,7 @@ export const metadata: Metadata = {
 
 **Client**: J B Singh & Sons
 **Website**: www.jbsinghnsons.com
-**Email**: enquiry@jbsinghnsons.com
+**Email**: jbsinghnhsons2005@hotmail.com
 **Telephone**: 2773 2400
 **Mobile**: +91 98204 56539
 

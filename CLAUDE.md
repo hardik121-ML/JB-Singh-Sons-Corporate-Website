@@ -9,7 +9,7 @@ This is a corporate logistics website for **J B Singh & Sons**, built with Next.
 **Client**: J B Singh & Sons (Mumbai-based logistics company, est. 2003)
 **Project Manager**: Damini Rathi (responsible for asset collection)
 **Website**: www.jbsinghnsons.com
-**Email**: enquiry@jbsinghnsons.com
+**Email**: jbsinghnhsons2005@hotmail.com
 **Mobile**: +91 98204 56539
 **Telephone**: 2773 2400
 
@@ -58,9 +58,10 @@ npm run lint            # Run ESLint
 ### Content Management Strategy
 
 **All content is centralized in `/lib/constants.ts`**. This single source of truth contains:
-- `COMPANY_INFO` - Contact details (website, email, telephone, mobile), head office address, corporate office address, established date
+- `COMPANY_INFO` - Contact details (website, email: jbsinghnhsons2005@hotmail.com, telephone, mobile), head office address, corporate office address, established date
 - `NAV_LINKS` - Main navigation structure
-- `SERVICES` - All 9 service definitions (id, title, description, capabilities, slug)
+- `SERVICES` - All 8 service definitions (id, title, description, capabilities, slug)
+  - **Note**: Project Management and Custom Clearance are combined into one service: "Project Management & Custom Clearance"
 - `SOLUTIONS` - 9 solution blocks
 - `STATS` - Company statistics (some are placeholders awaiting client data)
 - `WHY_CHOOSE_US` - 5 value propositions
@@ -71,11 +72,15 @@ npm run lint            # Run ESLint
 
 ### Service Page Pattern
 
-All 9 service pages follow an identical pattern:
+All 8 service pages follow an identical pattern:
 1. Each service has a route in `/app/services/[service-slug]/page.tsx`
 2. All use the shared `<ServiceTemplate>` component (`/components/services/ServiceTemplate.tsx`)
 3. Service data is fetched from `SERVICES` array using `.find(s => s.id === "service-id")!` (non-null assertion is safe because service IDs are hardcoded)
 4. Metadata is defined per-page for SEO (title and description extracted from service data)
+
+**Current Services** (8 total):
+- **Core Services** (3): Project Management & Custom Clearance, Transportation Service, Equipment Hire
+- **Partner Network** (5): Freight Forwarding, Marine Logistics, Warehousing & Distribution, Domestic Express, Cross Trade Services
 
 **Adding a new service**:
 1. Add entry to `SERVICES` in `constants.ts`
@@ -92,6 +97,7 @@ All 9 service pages follow an identical pattern:
 - `Button`, `Card`, `Container`, `Section`, `Input`, `Textarea`
 - Use `cn()` utility from `/lib/utils.ts` for className merging (clsx + tailwind-merge)
 - All UI components accept standard React props and use TypeScript for prop typing
+- **Card Component**: Uses `flex flex-col` layout with `flex-grow` on CardHeader to ensure footers align at bottom across cards of different heights
 
 **Page Sections** (`/components/home/`, `/components/services/`, `/components/contact/`):
 - Home page is composed of sections (Hero, StatsBlock, AboutPreview, ServicesGrid)
@@ -99,11 +105,14 @@ All 9 service pages follow an identical pattern:
 
 **ServicesGrid Component** (`/components/home/ServicesGrid.tsx`):
 - Services are displayed in two horizontal scrolling carousels
-- **Core Services** (4): Custom Clearance, Project Management, Transportation, Equipment Hire
-- **Partner Network** (5): Freight Forwarding, Marine Logistics, Warehousing, Domestic Express, Cross Trade
-- Auto-scrolling animation with pause-on-hover functionality
+- **Core Services** (3): Project Management & Custom Clearance (combined), Transportation Service, Equipment Hire
+- **Partner Network** (5): Freight Forwarding, Marine Logistics, Warehousing & Distribution, Domestic Express, Cross Trade Services
+- **Responsive Carousel Behavior**:
+  - **Mobile/Tablet (< 1280px)**: Manual horizontal scroll with touch/swipe, each service shown once, snap-to-position, hidden scrollbar
+  - **Desktop (≥ 1280px)**: Auto-scrolling animation with services duplicated 3x for infinite loop effect, pause-on-hover functionality
 - Each service uses Phosphor Icons (imported dynamically by icon name from constants)
 - Service cards have gradient backgrounds and left accent borders matching service type
+- "Learn More" links aligned at bottom of all cards using flexbox layout
 
 **Client Components Guidelines**:
 - Use `"use client"` directive when components need:
@@ -130,7 +139,7 @@ All 9 service pages follow an identical pattern:
 Located in `/components/contact/ContactForm.tsx`:
 - Uses **React Hook Form** for validation
 - Integrates with **EmailJS** (requires env vars: `NEXT_PUBLIC_EMAILJS_SERVICE_ID`, `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID`, `NEXT_PUBLIC_EMAILJS_PUBLIC_KEY`)
-- Form sends to: `enquiry@jbsinghnsons.com`
+- Form sends to: `jbsinghnhsons2005@hotmail.com`
 
 **EmailJS Template Variables**:
 ```
@@ -261,13 +270,14 @@ Do not implement these without explicit client approval and updated requirements
 3. All routes are statically generated (SSG):
    - 1 home page
    - 1 about page
-   - 1 services overview + 9 individual service pages (10 total)
+   - 1 services overview + 8 individual service pages (9 total)
+     - Note: Custom Clearance removed as standalone page, now combined with Project Management
    - 1 solutions page
    - 1 careers page
    - 1 contact page
    - 2 legal pages (terms, privacy)
-   - **Total: 15 routes**
-4. Build output shows route sizes (should all be <110 kB First Load JS)
+   - **Total: 17 routes** (including _not-found)
+4. Build output shows route sizes (should all be <120 kB First Load JS)
 
 **Build errors to watch for**:
 - TypeScript errors (strict mode enabled)

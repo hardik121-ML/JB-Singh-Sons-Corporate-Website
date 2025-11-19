@@ -3,8 +3,8 @@ import ServiceTemplate from "@/components/services/ServiceTemplate";
 import { SERVICES } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Project Management / Break Bulk Movement",
-  description: "End-to-end management of oversized and non-containerised cargo with engineered routing and safe lift planning.",
+  title: "Project Management & Custom Clearance",
+  description: "End-to-end project cargo management with break bulk handling and full customs clearance support for regulatory compliance.",
 };
 
 export default function ProjectManagementPage() {

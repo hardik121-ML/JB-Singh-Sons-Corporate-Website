@@ -9,7 +9,7 @@ export function Card({ className, hover = false, children, ...props }: CardProps
   return (
     <div
       className={cn(
-        "rounded-2vmax bg-white shadow-md overflow-hidden",
+        "rounded-2vmax bg-white shadow-md overflow-hidden flex flex-col",
         hover && "transition-all duration-300 hover:shadow-xl hover:-translate-y-1",
         className
       )}
@@ -23,7 +23,7 @@ export function Card({ className, hover = false, children, ...props }: CardProps
 export function CardHeader({ className, ...props }: HTMLAttributes<HTMLDivElement>) {
   return (
     <div
-      className={cn("flex flex-col space-y-1.5 p-6", className)}
+      className={cn("flex flex-col space-y-1.5 p-6 flex-grow", className)}
       {...props}
     />
   );

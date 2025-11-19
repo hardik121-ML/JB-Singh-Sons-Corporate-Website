@@ -291,7 +291,7 @@ See **OUT_OF_SCOPE.md** for detailed list. Key features:
 ### Client
 - **Company**: J B Singh & Sons
 - **Website**: www.jbsinghnsons.com
-- **Email**: enquiry@jbsinghnsons.com
+- **Email**: jbsinghnhsons2005@hotmail.com
 - **Telephone**: 2773 2400
 - **Mobile**: +91 98204 56539
 - **Head Office**: 23/9, Bhupat Bhavan, Ground Floor, Vaju Kotak Marg, Fort, Mumbai – 400 001

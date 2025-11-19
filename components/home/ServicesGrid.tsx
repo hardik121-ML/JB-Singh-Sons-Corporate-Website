@@ -5,14 +5,33 @@ import { Card, CardHeader, CardTitle, CardDescription, CardFooter } from "@/comp
 import Section from "@/components/ui/Section";
 import { SERVICES } from "@/lib/constants";
 import * as PhosphorIcons from "@phosphor-icons/react";
+import { useState, useEffect } from "react";
 
 export default function ServicesGrid() {
   const coreServices = SERVICES.filter(s => s.serviceType === "core");
   const partnerServices = SERVICES.filter(s => s.serviceType === "partner");
 
-  // Duplicate services for infinite scroll effect
-  const duplicatedCoreServices = [...coreServices, ...coreServices, ...coreServices];
-  const duplicatedPartnerServices = [...partnerServices, ...partnerServices, ...partnerServices];
+  // State to track if we're on desktop (for infinite scroll with duplicates)
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    // Check if screen is desktop size (xl breakpoint = 1280px)
+    const checkDesktop = () => {
+      setIsDesktop(window.innerWidth >= 1280);
+    };
+
+    checkDesktop();
+    window.addEventListener('resize', checkDesktop);
+    return () => window.removeEventListener('resize', checkDesktop);
+  }, []);
+
+  // Use duplicates for desktop infinite scroll, single set for mobile/tablet
+  const displayCoreServices = isDesktop
+    ? [...coreServices, ...coreServices, ...coreServices]
+    : coreServices;
+  const displayPartnerServices = isDesktop
+    ? [...partnerServices, ...partnerServices, ...partnerServices]
+    : partnerServices;
 
   // Get Phosphor icon component by name
   const getIcon = (iconName: string) => {
@@ -41,12 +60,13 @@ export default function ServicesGrid() {
             Our Core Services
           </h3>
         </div>
-        <div className="relative overflow-hidden -mx-6 md:-mx-8 lg:-mx-12">
-          <div className="flex gap-6 pb-4 animate-scroll-core hover:animation-pause">
-            {duplicatedCoreServices.map((service, index) => {
+        {/* Mobile/Tablet: Manual scroll, Desktop (1280px+): Auto-scroll animation */}
+        <div className="relative -mx-6 md:-mx-8 xl:-mx-12 overflow-x-auto xl:overflow-hidden scrollbar-hide snap-x snap-mandatory">
+          <div className="flex gap-6 pb-4 px-6 md:px-8 xl:px-0 xl:animate-scroll-core xl:hover:animation-pause">
+            {displayCoreServices.map((service, index) => {
               const Icon = getIcon(service.icon);
               return (
-                <Card key={`${service.id}-${index}`} hover className="group flex-shrink-0 w-80 bg-white">
+                <Card key={`${service.id}-${index}`} hover className="group flex-shrink-0 w-80 bg-white snap-start">
                   <CardHeader>
                     {/* Service Icon */}
                     <div className="w-16 h-16 bg-primary-orange/10 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-primary-orange/20 transition-colors">
@@ -82,12 +102,13 @@ export default function ServicesGrid() {
             Through Our Partner Network
           </h3>
         </div>
-        <div className="relative overflow-hidden -mx-6 md:-mx-8 lg:-mx-12">
-          <div className="flex gap-6 pb-4 animate-scroll-partner hover:animation-pause">
-            {duplicatedPartnerServices.map((service, index) => {
+        {/* Mobile/Tablet: Manual scroll, Desktop (1280px+): Auto-scroll animation */}
+        <div className="relative -mx-6 md:-mx-8 xl:-mx-12 overflow-x-auto xl:overflow-hidden scrollbar-hide snap-x snap-mandatory">
+          <div className="flex gap-6 pb-4 px-6 md:px-8 xl:px-0 xl:animate-scroll-partner xl:hover:animation-pause">
+            {displayPartnerServices.map((service, index) => {
               const Icon = getIcon(service.icon);
               return (
-                <Card key={`${service.id}-${index}`} hover className="group flex-shrink-0 w-80 bg-white">
+                <Card key={`${service.id}-${index}`} hover className="group flex-shrink-0 w-80 bg-white snap-start">
                   <CardHeader>
                     {/* Service Icon */}
                     <div className="w-16 h-16 bg-primary-navy/10 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-primary-navy/20 transition-colors">

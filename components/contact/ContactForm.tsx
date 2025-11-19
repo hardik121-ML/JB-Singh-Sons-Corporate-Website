@@ -35,7 +35,7 @@ export default function ContactForm() {
         phone: data.phone,
         company: data.company || "N/A",
         message: data.message,
-        to_email: "enquiry@jbsinghnsons.com",
+        to_email: "jbsinghnhsons2005@hotmail.com",
       };
 
       await emailjs.send(serviceId, templateId, templateParams, publicKey);
@@ -161,7 +161,7 @@ export default function ContactForm() {
       {submitStatus === "error" && (
         <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg">
           Sorry, there was an error sending your message. Please try again or email us directly at
-          enquiry@jbsinghnsons.com
+          jbsinghnhsons2005@hotmail.com
         </div>
       )}
 

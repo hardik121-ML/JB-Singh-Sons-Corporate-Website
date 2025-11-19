@@ -259,7 +259,7 @@ The contact form sends the following data:
 - Phone (`phone`)
 - Company (`company`)
 - Message (`message`)
-- Recipient email (`to_email`): enquiry@jbsinghnsons.com
+- Recipient email (`to_email`): jbsinghnhsons2005@hotmail.com
 
 **Template Example**:
 ```
