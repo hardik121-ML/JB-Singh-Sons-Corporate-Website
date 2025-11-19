@@ -56,8 +56,10 @@ export default function TermsAndConditionsPage() {
 
             <h2 className="text-2xl font-bold text-neutral-dark">7. Contact Information</h2>
             <p>
-              For any questions regarding these terms and conditions, please contact us at
-              jbsinghnhsons2005@hotmail.com
+              For any questions regarding these terms and conditions, please contact us at{" "}
+              <a href="mailto:enquiry@jbsinghnsons.com" className="text-primary-orange hover:underline">
+                enquiry@jbsinghnsons.com
+              </a>
             </p>
           </div>
         </div>

@@ -14,7 +14,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center space-x-3 mb-4">
               <Image
-                src="/Logo.png"
+                src="/Logo.svg"
                 alt="J B Singh & Sons Logo"
                 width={72}
                 height={72}
@@ -50,33 +50,57 @@ export default function Footer() {
           {/* Contact Us */}
           <div>
             <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
-            <address className="not-italic text-sm text-gray-300 space-y-2">
-              <p className="font-semibold text-white">{COMPANY_INFO.name}</p>
-              <p>{COMPANY_INFO.address.line1}</p>
-              <p>{COMPANY_INFO.address.line2}</p>
+
+            {/* Head Office */}
+            <div className="mb-4">
+              <p className="text-sm font-semibold text-primary-orange mb-2">{COMPANY_INFO.headOffice.label}</p>
+              <address className="not-italic text-sm text-gray-300 space-y-1">
+                <p className="font-semibold text-white">{COMPANY_INFO.name}</p>
+                <p>{COMPANY_INFO.headOffice.address.line1}</p>
+                <p>{COMPANY_INFO.headOffice.address.line2}</p>
+                <p>
+                  {COMPANY_INFO.headOffice.address.city} – {COMPANY_INFO.headOffice.address.postalCode}
+                </p>
+              </address>
+            </div>
+
+            {/* Corporate Office */}
+            <div className="mb-4">
+              <p className="text-sm font-semibold text-primary-orange mb-2">{COMPANY_INFO.corporateOffice.label}</p>
+              <address className="not-italic text-sm text-gray-300 space-y-1">
+                <p>{COMPANY_INFO.corporateOffice.address.line1}</p>
+                <p>{COMPANY_INFO.corporateOffice.address.line2}</p>
+                <p>{COMPANY_INFO.corporateOffice.address.city}</p>
+              </address>
+            </div>
+
+            {/* Contact Info */}
+            <div className="pt-2 space-y-1 text-sm text-gray-300">
               <p>
-                {COMPANY_INFO.address.city} – {COMPANY_INFO.address.postalCode}
+                <span className="font-medium">Tel:</span> {COMPANY_INFO.contact.telephone}
               </p>
               <p>
-                {COMPANY_INFO.address.state}, {COMPANY_INFO.address.country}
+                <span className="font-medium">Mobile:</span> {COMPANY_INFO.contact.mobile}
               </p>
-              <div className="pt-2 space-y-1">
-                <p>
-                  <span className="font-medium">Tel:</span> {COMPANY_INFO.contact.telephone}
-                </p>
-                <p>
-                  <span className="font-medium">Mobile:</span> {COMPANY_INFO.contact.mobile}
-                </p>
-                <p>
-                  <a
-                    href={`mailto:${COMPANY_INFO.contact.email}`}
-                    className="hover:text-primary-orange transition-colors"
-                  >
-                    {COMPANY_INFO.contact.email}
-                  </a>
-                </p>
-              </div>
-            </address>
+              <p>
+                <a
+                  href={`mailto:${COMPANY_INFO.contact.email}`}
+                  className="hover:text-primary-orange transition-colors"
+                >
+                  {COMPANY_INFO.contact.email}
+                </a>
+              </p>
+              <p>
+                <a
+                  href={`https://${COMPANY_INFO.website}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary-orange transition-colors"
+                >
+                  {COMPANY_INFO.website}
+                </a>
+              </p>
+            </div>
           </div>
         </div>
 

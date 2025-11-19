@@ -65,9 +65,14 @@ export default function PrivacyPolicyPage() {
             <p>
               If you have questions about this Privacy Policy, please contact us at:
               <br />
-              Email: jbsinghnhsons2005@hotmail.com
+              Email:{" "}
+              <a href="mailto:enquiry@jbsinghnsons.com" className="text-primary-orange hover:underline">
+                enquiry@jbsinghnsons.com
+              </a>
               <br />
-              Phone: +91 98204 56539
+              Telephone: 2773 2400
+              <br />
+              Mobile: +91 98204 56539
             </p>
           </div>
         </div>

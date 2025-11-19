@@ -82,7 +82,6 @@
 - ✅ Mobile hamburger menu
 - ✅ Contact form with validation
 - ✅ EmailJS integration (pending credentials)
-- ✅ reCAPTCHA placeholder
 - ✅ SEO optimization (metadata, Open Graph)
 - ✅ Sitemap generation (next-sitemap)
 - ✅ TypeScript for type safety
@@ -135,13 +134,7 @@ The following items need to be configured before the website goes live:
 
 **Action**: Register at [EmailJS.com](https://www.emailjs.com/) and add credentials
 
-### 2. reCAPTCHA Setup
-**File**: `.env.local`
-- `NEXT_PUBLIC_RECAPTCHA_SITE_KEY`
-
-**Action**: Register at [Google reCAPTCHA](https://www.google.com/recaptcha/admin)
-
-### 3. Site URL
+### 2. Site URL
 **File**: `.env.local`
 - `SITE_URL=https://jbsingh.com`
 
@@ -157,7 +150,6 @@ See **PLACEHOLDERS.md** for complete details. Key items:
 - [ ] Logo (SVG format)
 - [ ] Company statistics (accurate numbers)
 - [ ] EmailJS credentials
-- [ ] reCAPTCHA keys
 
 ### High Priority
 - [ ] Hero background image
@@ -191,7 +183,6 @@ See **PLACEHOLDERS.md** for complete details. Key items:
 
 2. **Configuration**
    - [ ] Configure EmailJS
-   - [ ] Set up reCAPTCHA
    - [ ] Set site URL
    - [ ] Add Google Analytics (optional)
 
@@ -299,9 +290,12 @@ See **OUT_OF_SCOPE.md** for detailed list. Key features:
 
 ### Client
 - **Company**: J B Singh & Sons
-- **Email**: jbsinghnhsons2005@hotmail.com
-- **Phone**: +91 98204 56539
-- **Address**: Room No. 9, 2nd Floor, 23, Vaju Kotak Marg, Fort, Mumbai – 400001
+- **Website**: www.jbsinghnsons.com
+- **Email**: enquiry@jbsinghnsons.com
+- **Telephone**: 2773 2400
+- **Mobile**: +91 98204 56539
+- **Head Office**: 23/9, Bhupat Bhavan, Ground Floor, Vaju Kotak Marg, Fort, Mumbai – 400 001
+- **Corporate Office**: Haware Centurian, S04 E & E1, 2nd Floor, Sector 19A, Nerul (East), New Mumbai – 400 706
 
 ### Project Manager
 - **Name**: Damini Rathi
@@ -356,7 +350,6 @@ See **OUT_OF_SCOPE.md** for detailed list. Key features:
 
 ### Pending Configuration
 🔄 EmailJS credentials
-🔄 reCAPTCHA keys
 🔄 Client assets (images, logos)
 🔄 Legal content (Terms, Privacy)
 🔄 Company statistics
@@ -417,7 +410,7 @@ JBSingh_Website/
 
 This website is **production-ready** pending:
 1. Client asset delivery (logos, images, content)
-2. EmailJS and reCAPTCHA configuration
+2. EmailJS configuration
 3. Legal content (Terms & Privacy Policy)
 4. Final content review and approval
 5. Deployment to hosting platform

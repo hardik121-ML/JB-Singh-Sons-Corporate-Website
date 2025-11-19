@@ -242,12 +242,7 @@ If available, for each service:
 - Public Key
 - **Setup**: See README.md for configuration guide
 
-### 2. Google reCAPTCHA
-- Site Key
-- Secret Key
-- **Setup**: Register at https://www.google.com/recaptcha/admin
-
-### 3. Google Maps
+### 2. Google Maps
 - Maps API Key
 - Location coordinates for map embed
 - **Current**: Using placeholder
@@ -264,7 +259,7 @@ The contact form sends the following data:
 - Phone (`phone`)
 - Company (`company`)
 - Message (`message`)
-- Recipient email (`to_email`): jbsinghnhsons2005@hotmail.com
+- Recipient email (`to_email`): enquiry@jbsinghnsons.com
 
 **Template Example**:
 ```
@@ -302,7 +297,6 @@ Please coordinate with the client to gather:
 - [ ] Terms and Conditions (legal text)
 - [ ] Privacy Policy (legal text)
 - [ ] EmailJS credentials
-- [ ] reCAPTCHA keys
 - [ ] Google Maps API key
 - [ ] Certifications/awards (if any)
 - [ ] Case studies (if available)

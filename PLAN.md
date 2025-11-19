@@ -134,7 +134,6 @@ npx create-next-app@latest jbsingh-website --typescript --tailwind --app --eslin
 NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id
 NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id
 NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
-NEXT_PUBLIC_RECAPTCHA_SITE_KEY=your_recaptcha_key
 ```
 
 ## Phase 2: Design System & Reusable Components
@@ -291,19 +290,31 @@ Placeholders for: Photos, HSE programs, ESG framework
 ### 3.7 Contact Page (`/app/contact/page.tsx`)
 **Title**: "Contact Us"
 
-**Address Block**:
+**Address Blocks**:
+
+Head Office:
 ```
 J. B. Singh & Sons
-Room No. 9, 2nd Floor
-23, Vaju Kotak Marg
-Fort, Mumbai – 400001
+23/9, Bhupat Bhavan, Ground Floor
+Vaju Kotak Marg
+Fort, Mumbai – 400 001
+Maharashtra, India
+```
+
+Corporate Office:
+```
+J. B. Singh & Sons
+Haware Centurian, S04 E & E1, 2nd Floor
+Sector 19A, Nerul (East)
+New Mumbai – 400 706
 Maharashtra, India
 ```
 
 **Contact Details**:
-- Telephone: 27732400
+- Telephone: 2773 2400
 - Mobile: +91 98204 56539
-- Email: jbsinghnhsons2005@hotmail.com
+- Email: enquiry@jbsinghnsons.com
+- Website: www.jbsinghnsons.com
 
 **Google Maps Embed**: Interactive map
 
@@ -313,7 +324,6 @@ Maharashtra, India
 - Phone (required)
 - Company (optional)
 - Message (required)
-- Google reCAPTCHA v3
 - Submit button
 - Success/error messaging
 - Email delivery via EmailJS/Formspree
@@ -328,10 +338,9 @@ Maharashtra, India
 ### 4.1 Contact Form
 - React Hook Form for validation
 - EmailJS or Formspree for email delivery
-- reCAPTCHA v3 spam protection
 - Client-side validation
 - Success/error states
-- Form submission to admin email: jbsinghnhsons2005@hotmail.com
+- Form submission to admin email: enquiry@jbsinghnsons.com
 - Store submissions (future: integrate with CMS or database)
 
 ### 4.2 Responsive Design
@@ -657,9 +666,13 @@ export const metadata: Metadata = {
 ## Contact Information
 
 **Client**: J B Singh & Sons
-**Email**: jbsinghnhsons2005@hotmail.com
-**Phone**: +91 98204 56539
-**Address**: Room No. 9, 2nd Floor, 23, Vaju Kotak Marg, Fort, Mumbai – 400001
+**Website**: www.jbsinghnsons.com
+**Email**: enquiry@jbsinghnsons.com
+**Telephone**: 2773 2400
+**Mobile**: +91 98204 56539
+
+**Head Office**: 23/9, Bhupat Bhavan, Ground Floor, Vaju Kotak Marg, Fort, Mumbai – 400 001
+**Corporate Office**: Haware Centurian, S04 E & E1, 2nd Floor, Sector 19A, Nerul (East), New Mumbai – 400 706
 
 **Project Manager**: Damini Rathi (responsible for collecting assets from client)
 

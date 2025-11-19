@@ -26,7 +26,6 @@ A modern, responsive corporate website for J B Singh & Sons, a logistics service
 - ✅ TypeScript for type safety
 - ✅ Performance optimized
 - 🔄 CMS integration (future)
-- 🔄 reCAPTCHA v3 (pending configuration)
 
 ## 🏗️ Project Structure
 
@@ -82,9 +81,6 @@ NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id
 NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id
 NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
 
-# reCAPTCHA Configuration
-NEXT_PUBLIC_RECAPTCHA_SITE_KEY=your_recaptcha_site_key
-
 # Site URL (for sitemap generation)
 SITE_URL=https://jbsingh.com
 ```
@@ -102,13 +98,7 @@ SITE_URL=https://jbsingh.com
    - `{{to_email}}`
 4. Copy your Service ID, Template ID, and Public Key to `.env.local`
 
-### 4. reCAPTCHA Setup (Optional)
-
-1. Go to [Google reCAPTCHA](https://www.google.com/recaptcha/admin)
-2. Register a new site with reCAPTCHA v3
-3. Add your site key to `.env.local`
-
-### 5. Run Development Server
+### 4. Run Development Server
 
 ```bash
 npm run dev
@@ -253,16 +243,19 @@ npm run build
 ## 🔒 Security
 
 - Form validation (client-side)
-- reCAPTCHA spam protection (when configured)
 - Environment variables for sensitive data
 - No exposed API keys
 
 ## 📞 Client Information
 
 **Company**: J B Singh & Sons
-**Email**: jbsinghnhsons2005@hotmail.com
-**Phone**: +91 98204 56539
-**Address**: Room No. 9, 2nd Floor, 23, Vaju Kotak Marg, Fort, Mumbai – 400001
+**Website**: www.jbsinghnsons.com
+**Email**: enquiry@jbsinghnsons.com
+**Telephone**: 2773 2400
+**Mobile**: +91 98204 56539
+
+**Head Office**: 23/9, Bhupat Bhavan, Ground Floor, Vaju Kotak Marg, Fort, Mumbai – 400 001
+**Corporate Office**: Haware Centurian, S04 E & E1, 2nd Floor, Sector 19A, Nerul (East), New Mumbai – 400 706
 
 **Project Manager**: Damini Rathi
 

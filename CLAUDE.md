@@ -4,11 +4,14 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a corporate logistics website for **J B Singh & Sons**, built with Next.js 14 (App Router), TypeScript, and Tailwind CSS. The site is production-ready and includes 11 pages (Home, About, 9 Services, Solutions, CSR, Careers, Contact, Terms, Privacy).
+This is a corporate logistics website for **J B Singh & Sons**, built with Next.js 14 (App Router), TypeScript, and Tailwind CSS. The site is production-ready and includes 15 routes: Home, About, Services (overview + 9 individual service pages), Solutions, Careers, Contact, Terms & Conditions, and Privacy Policy.
 
 **Client**: J B Singh & Sons (Mumbai-based logistics company, est. 2003)
 **Project Manager**: Damini Rathi (responsible for asset collection)
-**Contact**: jbsinghnhsons2005@hotmail.com | +91 98204 56539
+**Website**: www.jbsinghnsons.com
+**Email**: enquiry@jbsinghnsons.com
+**Mobile**: +91 98204 56539
+**Telephone**: 2773 2400
 
 ## Essential Commands
 
@@ -37,12 +40,25 @@ npm run lint            # Run ESLint
 - **Email**: EmailJS 4 - Client-side email sending for contact form
 - **SEO**: next-sitemap 4 - Sitemap and robots.txt generation
 
+## Configuration Files
+
+- **next.config.js** - Next.js configuration (minimal setup, uses defaults)
+- **next-sitemap.config.js** - Sitemap generation config (runs via postbuild script)
+- **tailwind.config.ts** - Tailwind CSS customization:
+  - Custom colors (primary-orange = #FF0000, primary-navy = #00324B)
+  - Responsive typography with viewport-relative units
+  - Custom spacing and border radius utilities
+  - Font family configuration (Inter)
+- **tsconfig.json** - TypeScript configuration (strict mode enabled)
+- **postcss.config.js** - PostCSS setup for Tailwind CSS processing
+- **.eslintrc.json** - ESLint rules (includes `react/no-unescaped-entities` disabled for content)
+
 ## Architecture & Key Patterns
 
 ### Content Management Strategy
 
 **All content is centralized in `/lib/constants.ts`**. This single source of truth contains:
-- `COMPANY_INFO` - Contact details, address, established date
+- `COMPANY_INFO` - Contact details (website, email, telephone, mobile), head office address, corporate office address, established date
 - `NAV_LINKS` - Main navigation structure
 - `SERVICES` - All 9 service definitions (id, title, description, capabilities, slug)
 - `SOLUTIONS` - 9 solution blocks
@@ -78,7 +94,7 @@ All 9 service pages follow an identical pattern:
 - All UI components accept standard React props and use TypeScript for prop typing
 
 **Page Sections** (`/components/home/`, `/components/services/`, `/components/contact/`):
-- Home page is composed of 5 distinct sections (Hero, StatsBlock, AboutPreview, ServicesGrid, CSRPreview)
+- Home page is composed of sections (Hero, StatsBlock, AboutPreview, ServicesGrid)
 - Each section is self-contained and reusable
 
 **ServicesGrid Component** (`/components/home/ServicesGrid.tsx`):
@@ -89,12 +105,21 @@ All 9 service pages follow an identical pattern:
 - Each service uses Phosphor Icons (imported dynamically by icon name from constants)
 - Service cards have gradient backgrounds and left accent borders matching service type
 
+**Client Components Guidelines**:
+- Use `"use client"` directive when components need:
+  - Interactive Phosphor Icons (hover states, animations)
+  - Form handling with React Hook Form
+  - Browser APIs (localStorage, window events)
+  - Event handlers (onClick, onChange, etc.)
+  - Framer Motion animations
+- Most components are Server Components by default (better performance)
+
 **Design System**:
 - Colors defined in `tailwind.config.ts` and `app/globals.css`
 - Primary red: `#FF0000` (pure red - brand color matching logo)
 - Navy: `#00324B`
 - **Important**: All uses of `primary-orange` class now render as red (#FF0000), not orange
-- Logo: `/public/Logo.png` (circular badge with ship and JBS branding)
+- Logo: `/public/Logo.svg` (SVG format - circular badge with ship and JBS branding)
 - Responsive typography uses viewport units with fallbacks: `text-responsive-xl` = `max(1.5rem, 2vmax)`
   - All responsive text sizes use `max(fixed-size, viewport-size)` to ensure minimum readable size
   - Custom spacing: `4vmax` = `max(2rem, 4vmax)`, `2.5vmax` = `max(1.25rem, 2.5vmax)`
@@ -105,8 +130,7 @@ All 9 service pages follow an identical pattern:
 Located in `/components/contact/ContactForm.tsx`:
 - Uses **React Hook Form** for validation
 - Integrates with **EmailJS** (requires env vars: `NEXT_PUBLIC_EMAILJS_SERVICE_ID`, `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID`, `NEXT_PUBLIC_EMAILJS_PUBLIC_KEY`)
-- reCAPTCHA v3 placeholder exists but needs `NEXT_PUBLIC_RECAPTCHA_SITE_KEY` to activate
-- Form sends to: `jbsinghnhsons2005@hotmail.com`
+- Form sends to: `enquiry@jbsinghnsons.com`
 
 **EmailJS Template Variables**:
 ```
@@ -120,8 +144,7 @@ Required `.env.local` structure:
 NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id
 NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id
 NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
-NEXT_PUBLIC_RECAPTCHA_SITE_KEY=your_recaptcha_key
-SITE_URL=https://jbsingh.com
+SITE_URL=https://jbsingh-website.vercel.app
 ```
 
 The site will build and run without these, but contact form won't send emails until EmailJS is configured.
@@ -146,7 +169,7 @@ Uses Phosphor Icons loaded dynamically:
 
 - Every page has `export const metadata: Metadata` with title, description, Open Graph tags
 - Sitemap auto-generated via `next-sitemap` (config in `next-sitemap.config.js`)
-- Sitemap URL structure: `https://jbsingh.com` (update `SITE_URL` env var for production)
+- Sitemap URL structure: `https://jbsingh-website.vercel.app` (update `SITE_URL` env var for custom domain)
 - All images should have alt text (currently placeholders exist)
 
 ### Asset Management
@@ -154,11 +177,26 @@ Uses Phosphor Icons loaded dynamically:
 **Asset Location**: `/public/images/placeholders/`
 
 **Current Image Status**:
-- ✅ Hero logistics illustration - `Logistics Illustration Placeholder - ContainersCranesShips.png`
-- ✅ Home page carousel images (3 images in AboutPreview component)
-- ✅ Logo - `/public/Logo.png` (PNG, integrated in header and footer)
+- ✅ Hero logistics illustration - `Logistics Illustration Placeholder - ContainersCranesShips.avif` (AVIF format, 24KB - optimized)
+- ✅ Home page carousel images (3 images in AboutPreview component):
+  - Image 1: `Image 1 WarehouseOffice.png` (1.6MB - PNG)
+  - Image 2: `Image 2 Team Operations.avif` (33KB - AVIF, optimized)
+  - Image 3: `Image 3 Wide Equipment Cargo.png` (2.3MB - PNG)
+- ✅ Logo - `/public/Logo.svg` (SVG format, integrated in header and footer)
 - ✅ Service icons - Using Phosphor Icons library (dynamically loaded)
-- ⏳ CSR initiative photos
+- ✅ Solutions page images:
+  - Solution 1 (Integrated Project Management): `Solution Image 1.webp` (21KB - WEBP, optimized)
+  - Solution 2 (Door-to-Door Solutions): `Solution Image 2.avif` (26KB - AVIF, optimized)
+  - Solution 3 (4PL Solutions): `Solution Image 3.avif` (48KB - AVIF, optimized)
+  - Solution 4 (Value-Added Services): `Solution Image 4.avif` (49KB - AVIF, optimized)
+  - Solution 5 (Custom Consultancy & Advisory): `Solution Image 5.webp` (26KB - WEBP, optimized)
+  - Solution 6: `Solution Image 6.avif` (24KB - AVIF, optimized)
+  - Solution 7: `Solution Image 7.avif` (45KB - AVIF, optimized)
+  - Solution 8: `Solution Image 8.avif` (32KB - AVIF, optimized)
+  - Solution 9: `Solution Image 9.avif` (22KB - AVIF, optimized)
+- ✅ Solutions CTA background - `Supply Chain Optimization.jpeg` (8.1KB - used in CTA section with navy gradient overlay)
+- ✅ Careers page background - `Hiring.avif` (87KB - used in "No Current Openings" section with dark gradient overlay and UsersFour Phosphor icon)
+- ✅ Contact page - Google Maps embed showing Corporate Office location in Nerul, Navi Mumbai
 - ⏳ Team photos for About page
 
 **Image Dimension Guidelines**:
@@ -225,11 +263,10 @@ Do not implement these without explicit client approval and updated requirements
    - 1 about page
    - 1 services overview + 9 individual service pages (10 total)
    - 1 solutions page
-   - 1 CSR page
    - 1 careers page
    - 1 contact page
    - 2 legal pages (terms, privacy)
-   - **Total: 18 routes**
+   - **Total: 15 routes**
 4. Build output shows route sizes (should all be <110 kB First Load JS)
 
 **Build errors to watch for**:
@@ -289,8 +326,7 @@ Add these in Vercel Project Settings → Environment Variables:
 - `NEXT_PUBLIC_EMAILJS_SERVICE_ID`
 - `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID`
 - `NEXT_PUBLIC_EMAILJS_PUBLIC_KEY`
-- `NEXT_PUBLIC_RECAPTCHA_SITE_KEY` (optional)
-- `SITE_URL` (set to production domain)
+- `SITE_URL` (currently: `https://jbsingh-website.vercel.app`, update for custom domain)
 
 After adding/updating environment variables, redeploy from Vercel dashboard.
 

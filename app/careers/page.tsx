@@ -2,10 +2,12 @@
 
 import { useState } from "react";
 import type { Metadata } from "next";
+import Image from "next/image";
 import Section from "@/components/ui/Section";
 import { Card, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/Card";
 import Button from "@/components/ui/Button";
 import { COMPANY_INFO } from "@/lib/constants";
+import { UsersFour } from "@phosphor-icons/react";
 
 // This would come from CMS or database in production
 interface JobListing {
@@ -48,24 +50,42 @@ export default function CareersPage() {
       <Section>
         {!hasJobs ? (
           <div className="max-w-4xl mx-auto text-center">
-            <div className="bg-neutral-light rounded-2xl p-12">
-              <div className="text-6xl mb-6">💼</div>
-              <h2 className="text-2xl font-bold text-neutral-dark mb-4">
-                No Current Openings
-              </h2>
-              <p className="text-lg text-gray-600 mb-6">
-                Currently, there are no vacancies. However, we're always looking for talented
-                individuals to join our team.
-              </p>
-              <p className="text-gray-700 mb-2">
-                You may send your resume to:
-              </p>
-              <a
-                href={`mailto:${COMPANY_INFO.contact.email}`}
-                className="text-primary-orange font-semibold hover:underline"
-              >
-                {COMPANY_INFO.contact.email}
-              </a>
+            <div className="rounded-2xl p-12 relative overflow-hidden">
+              {/* Background Image */}
+              <Image
+                src="/images/placeholders/Hiring.avif"
+                alt="Hiring background"
+                fill
+                className="object-cover"
+              />
+              {/* Dark Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-br from-neutral-dark/85 to-neutral-dark/70"></div>
+
+              {/* Content */}
+              <div className="relative z-10">
+                {/* Icon */}
+                <div className="mb-6 flex justify-center">
+                  <div className="bg-white/20 backdrop-blur-sm p-6 rounded-2xl inline-block">
+                    <UsersFour size={64} weight="duotone" className="text-white" />
+                  </div>
+                </div>
+                <h2 className="text-2xl font-bold text-white mb-4">
+                  No Current Openings
+                </h2>
+                <p className="text-lg text-gray-200 mb-6">
+                  Currently, there are no vacancies. However, we're always looking for talented
+                  individuals to join our team.
+                </p>
+                <p className="text-gray-300 mb-2">
+                  You may send your resume to:
+                </p>
+                <a
+                  href={`mailto:${COMPANY_INFO.contact.email}`}
+                  className="text-primary-orange font-semibold hover:underline"
+                >
+                  {COMPANY_INFO.contact.email}
+                </a>
+              </div>
             </div>
           </div>
         ) : (

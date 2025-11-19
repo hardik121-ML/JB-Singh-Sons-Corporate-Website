@@ -41,7 +41,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3">
             <Image
-              src="/Logo.png"
+              src="/Logo.svg"
               alt="J B Singh & Sons Logo"
               width={80}
               height={80}

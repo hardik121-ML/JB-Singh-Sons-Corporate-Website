@@ -47,7 +47,7 @@ export default function Hero() {
         <div className="mt-16 max-w-5xl mx-auto">
           <div className="relative aspect-video rounded-2xl overflow-hidden">
             <Image
-              src="/images/placeholders/Logistics Illustration Placeholder - ContainersCranesShips.png"
+              src="/images/placeholders/Logistics Illustration Placeholder - ContainersCranesShips.avif"
               alt="Logistics operations showing containers, cranes, and ships"
               fill
               className="object-cover"

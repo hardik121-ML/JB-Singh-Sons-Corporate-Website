@@ -35,7 +35,7 @@ export default function ContactForm() {
         phone: data.phone,
         company: data.company || "N/A",
         message: data.message,
-        to_email: "jbsinghnhsons2005@hotmail.com",
+        to_email: "enquiry@jbsinghnsons.com",
       };
 
       await emailjs.send(serviceId, templateId, templateParams, publicKey);
@@ -139,13 +139,6 @@ export default function ContactForm() {
         )}
       </div>
 
-      {/* reCAPTCHA Placeholder */}
-      <div className="bg-gray-100 border border-gray-300 rounded-lg p-4 text-center text-sm text-gray-500">
-        [reCAPTCHA v3 will be integrated here]
-        <br />
-        <span className="text-xs">Configure NEXT_PUBLIC_RECAPTCHA_SITE_KEY in .env.local</span>
-      </div>
-
       {/* Submit Button */}
       <div>
         <Button
@@ -168,7 +161,7 @@ export default function ContactForm() {
       {submitStatus === "error" && (
         <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg">
           Sorry, there was an error sending your message. Please try again or email us directly at
-          jbsinghnhsons2005@hotmail.com
+          enquiry@jbsinghnsons.com
         </div>
       )}
 

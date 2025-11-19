@@ -1,12 +1,9 @@
-import type { Metadata } from "next";
+"use client";
+
 import Section from "@/components/ui/Section";
 import { COMPANY_INFO } from "@/lib/constants";
 import ContactForm from "@/components/contact/ContactForm";
-
-export const metadata: Metadata = {
-  title: "Contact Us",
-  description: "Get in touch with J B Singh & Sons for all your logistics needs.",
-};
+import { MapPin, Phone, MapTrifold } from "@phosphor-icons/react";
 
 export default function ContactPage() {
   return (
@@ -36,28 +33,49 @@ export default function ContactPage() {
               </p>
             </div>
 
-            {/* Address */}
+            {/* Addresses */}
             <div>
-              <h3 className="text-lg font-semibold text-neutral-dark mb-3 flex items-center">
-                <span className="mr-2">📍</span> Address
+              <h3 className="text-lg font-semibold text-neutral-dark mb-4 flex items-center">
+                <MapPin size={24} weight="duotone" className="mr-2 text-primary-orange" /> Our Offices
               </h3>
-              <address className="not-italic text-gray-700 leading-relaxed">
-                <p className="font-semibold">{COMPANY_INFO.name}</p>
-                <p>{COMPANY_INFO.address.line1}</p>
-                <p>{COMPANY_INFO.address.line2}</p>
-                <p>
-                  {COMPANY_INFO.address.city} – {COMPANY_INFO.address.postalCode}
-                </p>
-                <p>
-                  {COMPANY_INFO.address.state}, {COMPANY_INFO.address.country}
-                </p>
-              </address>
+
+              {/* Head Office */}
+              <div className="mb-6">
+                <p className="font-semibold text-primary-orange mb-2">{COMPANY_INFO.headOffice.label}</p>
+                <address className="not-italic text-gray-700 leading-relaxed">
+                  <p className="font-semibold">{COMPANY_INFO.name}</p>
+                  <p>{COMPANY_INFO.headOffice.address.line1}</p>
+                  <p>{COMPANY_INFO.headOffice.address.line2}</p>
+                  <p>
+                    {COMPANY_INFO.headOffice.address.city} – {COMPANY_INFO.headOffice.address.postalCode}
+                  </p>
+                  <p>
+                    {COMPANY_INFO.headOffice.address.state}, {COMPANY_INFO.headOffice.address.country}
+                  </p>
+                </address>
+              </div>
+
+              {/* Corporate Office */}
+              <div>
+                <p className="font-semibold text-primary-orange mb-2">{COMPANY_INFO.corporateOffice.label}</p>
+                <address className="not-italic text-gray-700 leading-relaxed">
+                  <p className="font-semibold">{COMPANY_INFO.name}</p>
+                  <p>{COMPANY_INFO.corporateOffice.address.line1}</p>
+                  <p>{COMPANY_INFO.corporateOffice.address.line2}</p>
+                  <p>
+                    {COMPANY_INFO.corporateOffice.address.city} – {COMPANY_INFO.corporateOffice.address.postalCode}
+                  </p>
+                  <p>
+                    {COMPANY_INFO.corporateOffice.address.state}, {COMPANY_INFO.corporateOffice.address.country}
+                  </p>
+                </address>
+              </div>
             </div>
 
             {/* Contact Details */}
             <div>
               <h3 className="text-lg font-semibold text-neutral-dark mb-3 flex items-center">
-                <span className="mr-2">📞</span> Contact Details
+                <Phone size={24} weight="duotone" className="mr-2 text-primary-orange" /> Contact Details
               </h3>
               <div className="space-y-2 text-gray-700">
                 <p>
@@ -81,41 +99,36 @@ export default function ContactPage() {
                     {COMPANY_INFO.contact.email}
                   </a>
                 </p>
+                <p>
+                  <span className="font-medium">Website:</span>{" "}
+                  <a
+                    href={`https://${COMPANY_INFO.website}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-primary-orange"
+                  >
+                    {COMPANY_INFO.website}
+                  </a>
+                </p>
               </div>
             </div>
 
-            {/* Map Embed Placeholder */}
+            {/* Map Embed */}
             <div>
               <h3 className="text-lg font-semibold text-neutral-dark mb-3 flex items-center">
-                <span className="mr-2">🗺️</span> Location
+                <MapTrifold size={24} weight="duotone" className="mr-2 text-primary-orange" /> Location
               </h3>
-              <div className="aspect-video bg-gray-200 rounded-2xl flex items-center justify-center text-gray-400">
-                <div className="text-center p-4">
-                  <svg
-                    className="w-16 h-16 mx-auto mb-3 opacity-50"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                    />
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                    />
-                  </svg>
-                  <p className="text-sm">
-                    [Google Maps Embed]
-                    <br />
-                    Fort, Mumbai, Maharashtra
-                  </p>
-                </div>
+              <div className="aspect-video bg-gray-200 rounded-2xl overflow-hidden">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.8851642789523!2d73.01946617418268!3d19.024781253580507!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c3bebaa6233b%3A0x8c4dd6f417e2dc36!2sJ.B.%20Singh%20%26%20Sons!5e0!3m2!1sen!2sin!4v1763494669191!5m2!1sen!2sin"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="J B Singh & Sons - Corporate Office, Nerul, Navi Mumbai"
+                ></iframe>
               </div>
             </div>
           </div>

@@ -36,7 +36,7 @@ export default function AboutPreview() {
             </div>
             <div className="relative aspect-square rounded-2xl overflow-hidden bg-gray-100">
               <Image
-                src="/images/placeholders/Image 2 Team Operations.png"
+                src="/images/placeholders/Image 2 Team Operations.avif"
                 alt="J B Singh & Sons team and operations"
                 fill
                 className="object-contain"

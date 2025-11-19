@@ -1,23 +1,46 @@
 // Company Information
 export const COMPANY_INFO = {
   name: "J B Singh & Sons",
-  fullAddress: `J. B. Singh & Sons
-Room No. 9, 2nd Floor
-23, Vaju Kotak Marg
-Fort, Mumbai – 400001
+  website: "www.jbsinghnsons.com",
+  headOffice: {
+    label: "Head Office",
+    fullAddress: `J. B. Singh & Sons
+23/9, Bhupat Bhavan, Ground Floor
+Vaju Kotak Marg
+Fort, Mumbai – 400 001
 Maharashtra, India`,
-  address: {
-    line1: "Room No. 9, 2nd Floor",
-    line2: "23, Vaju Kotak Marg",
-    city: "Fort, Mumbai",
-    postalCode: "400001",
-    state: "Maharashtra",
-    country: "India",
+    address: {
+      line1: "23/9, Bhupat Bhavan, Ground Floor",
+      line2: "Vaju Kotak Marg",
+      city: "Fort, Mumbai",
+      postalCode: "400 001",
+      state: "Maharashtra",
+      country: "India",
+    },
+  },
+  corporateOffice: {
+    label: "Corporate Office",
+    fullAddress: `J. B. Singh & Sons
+Haware Centurian, S04 E & E1, 2nd Floor
+Sector 19A, Nerul (East)
+New Mumbai – 400 706
+Maharashtra, India`,
+    address: {
+      line1: "Haware Centurian, S04 E & E1, 2nd Floor",
+      line2: "Sector 19A, Nerul (East)",
+      city: "New Mumbai",
+      postalCode: "400 706",
+      state: "Maharashtra",
+      country: "India",
+    },
+    contact: {
+      telephone: "2773 2400",
+    },
   },
   contact: {
-    telephone: "27732400",
+    telephone: "2773 2400",
     mobile: "+91 98204 56539",
-    email: "jbsinghnhsons2005@hotmail.com",
+    email: "enquiry@jbsinghnsons.com",
   },
   established: "2003",
   yearsInOperation: "20+",
@@ -29,7 +52,6 @@ export const NAV_LINKS = [
   { label: "About Us", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Solutions", href: "/solutions" },
-  { label: "CSR", href: "/csr" },
   { label: "Careers", href: "/careers" },
   { label: "Contact", href: "/contact" },
 ];
@@ -276,7 +298,6 @@ export const FOOTER_LINKS = {
     { label: "Services", href: "/services" },
     { label: "Solutions", href: "/solutions" },
     { label: "Careers", href: "/careers" },
-    { label: "CSR", href: "/csr" },
     { label: "Contact", href: "/contact" },
   ],
   legal: [
