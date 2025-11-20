@@ -14,7 +14,7 @@ import {
 } from "@phosphor-icons/react";
 
 // Icon mapping
-const iconMap: { [key: string]: React.ComponentType<{ size?: number; weight?: string; className?: string }> } = {
+const iconMap: { [key: string]: any } = {
   Factory,
   Atom,
   Package,

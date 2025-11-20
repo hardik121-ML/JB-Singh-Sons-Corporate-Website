@@ -118,8 +118,9 @@ Site builds without these; contact form won't send emails.
 - **Home ServicesGrid**: Carousels (auto-scroll desktop, manual mobile)
 
 ### Assets
-- Images: `/public/images/placeholders/`
-- Video: `/public/videos/`
+- Placeholder images: `/public/images/placeholders/`
+- Service hero images: `/public/Logistics-20251119T135955Z-1-001/Cargo-Logistics/`
+- Hero video: `/public/videos/3309765-uhd_3840_2160_30fps.mp4`
 - Use Next.js `Image` with `fill` prop, `priority` for above-fold
 
 ### Types
