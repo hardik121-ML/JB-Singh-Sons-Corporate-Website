@@ -40,12 +40,12 @@ export default function ServicesGrid() {
   };
 
   return (
-    <Section background="light">
+    <Section className="bg-[#F2F4F7]">
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold text-neutral-dark mb-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-[#0A0A0A] mb-4">
           Integrated Logistics for Every Cargo Requirement
         </h2>
-        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+        <p className="text-lg text-[#4B5563] max-w-3xl mx-auto">
           Our services cover freight movement, regulatory clearance, project cargo, marine
           operations, warehousing, and domestic distribution. Each service follows defined
           processes, trained personnel, and strict compliance standards.
@@ -54,12 +54,13 @@ export default function ServicesGrid() {
 
       {/* Core Services */}
       <div className="mb-12 -mx-6 md:-mx-8 lg:-mx-12 px-6 md:px-8 lg:px-12 py-8 bg-gradient-to-br from-primary-orange/5 to-transparent rounded-2xl border-l-4 border-primary-orange">
-        <div className="flex items-center gap-3 mb-6">
+        <div className="flex items-center gap-3 mb-2">
           <div className="w-1.5 h-8 bg-primary-orange rounded-full"></div>
-          <h3 className="text-2xl font-bold text-neutral-dark">
+          <h3 className="text-2xl font-bold text-[#0A0A0A]">
             Our Core Services
           </h3>
         </div>
+        <p className="text-[#4B5563] mb-6 ml-5">Delivered directly by our operational team.</p>
         {/* Mobile/Tablet: Manual scroll, Desktop (1280px+): Auto-scroll animation */}
         <div className="relative -mx-6 md:-mx-8 xl:-mx-12 overflow-x-auto xl:overflow-hidden scrollbar-hide snap-x snap-mandatory">
           <div className="flex gap-6 pb-4 px-6 md:px-8 xl:px-0 xl:animate-scroll-core xl:hover:animation-pause">
@@ -72,7 +73,7 @@ export default function ServicesGrid() {
                     <div className="w-16 h-16 bg-primary-orange/10 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-primary-orange/20 transition-colors">
                       <Icon className="w-8 h-8 text-primary-orange" weight="duotone" />
                     </div>
-                    <CardTitle className="text-neutral-dark group-hover:text-primary-orange transition-colors">
+                    <CardTitle className="text-[#0A0A0A] group-hover:text-primary-orange transition-colors">
                       {service.title}
                     </CardTitle>
                     <CardDescription className="line-clamp-3">
@@ -95,13 +96,14 @@ export default function ServicesGrid() {
       </div>
 
       {/* Partner Network Services */}
-      <div className="-mx-6 md:-mx-8 lg:-mx-12 px-6 md:px-8 lg:px-12 py-8 bg-gradient-to-br from-primary-navy/5 to-transparent rounded-2xl border-l-4 border-primary-navy">
-        <div className="flex items-center gap-3 mb-6">
-          <div className="w-1.5 h-8 bg-primary-navy rounded-full"></div>
-          <h3 className="text-2xl font-bold text-neutral-dark">
-            Through Our Partner Network
+      <div className="-mx-6 md:-mx-8 lg:-mx-12 px-6 md:px-8 lg:px-12 py-8 bg-gradient-to-br from-[#0E287A]/5 to-transparent rounded-2xl border-l-4 border-[#0E287A]">
+        <div className="flex items-center gap-3 mb-2">
+          <div className="w-1.5 h-8 bg-[#0E287A] rounded-full"></div>
+          <h3 className="text-2xl font-bold text-[#0A0A0A]">
+            Third-Party Services
           </h3>
         </div>
+        <p className="text-[#4B5563] mb-6 ml-5">Provided through trusted, compliant partner networks.</p>
         {/* Mobile/Tablet: Manual scroll, Desktop (1280px+): Auto-scroll animation */}
         <div className="relative -mx-6 md:-mx-8 xl:-mx-12 overflow-x-auto xl:overflow-hidden scrollbar-hide snap-x snap-mandatory">
           <div className="flex gap-6 pb-4 px-6 md:px-8 xl:px-0 xl:animate-scroll-partner xl:hover:animation-pause">
@@ -111,10 +113,10 @@ export default function ServicesGrid() {
                 <Card key={`${service.id}-${index}`} hover className="group flex-shrink-0 w-80 bg-white snap-start">
                   <CardHeader>
                     {/* Service Icon */}
-                    <div className="w-16 h-16 bg-primary-navy/10 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-primary-navy/20 transition-colors">
-                      <Icon className="w-8 h-8 text-primary-navy" weight="duotone" />
+                    <div className="w-16 h-16 bg-[#0E287A]/10 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-[#0E287A]/20 transition-colors">
+                      <Icon className="w-8 h-8 text-[#0E287A]" weight="duotone" />
                     </div>
-                    <CardTitle className="text-neutral-dark group-hover:text-primary-navy transition-colors">
+                    <CardTitle className="text-[#0A0A0A] group-hover:text-[#0E287A] transition-colors">
                       {service.title}
                     </CardTitle>
                     <CardDescription className="line-clamp-3">
@@ -124,7 +126,7 @@ export default function ServicesGrid() {
                   <CardFooter>
                     <Link
                       href={service.slug}
-                      className="text-primary-navy font-medium hover:underline"
+                      className="text-[#0E287A] font-medium hover:underline"
                     >
                       Learn More →
                     </Link>

@@ -15,18 +15,17 @@ export default function SolutionsPage() {
   return (
     <>
       {/* Hero Section */}
-      <Section className="bg-gradient-to-br from-neutral-light to-white pt-32 pb-16">
+      <Section className="bg-[#F8F9FC] pt-32 pb-16">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-neutral-dark mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-[#0A0A0A] mb-6">
             Our Solutions
           </h1>
-          <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-8">
-            We support sectors that require precise logistics, consistent compliance, and controlled
-            costs. Our workflows align with the needs of manufacturing, engineering, trade, and
-            distribution, ensuring stable supply and predictable delivery.
+          <p className="text-lg md:text-xl text-[#4B5563] leading-relaxed mb-8">
+            We design logistics solutions for sectors that need precise execution, regulatory
+            alignment, and cost control across manufacturing, engineering, trade, and distribution.
           </p>
           <Link href="/contact">
-            <Button size="lg">Get in Touch</Button>
+            <Button size="lg">Contact Us</Button>
           </Link>
         </div>
       </Section>
@@ -119,34 +118,6 @@ export default function SolutionsPage() {
               </CardHeader>
             </Card>
           ))}
-        </div>
-      </Section>
-
-      {/* CTA Section */}
-      <Section>
-        <div className="max-w-4xl mx-auto text-center rounded-2xl p-12 relative overflow-hidden">
-          {/* Background Image */}
-          <Image
-            src="/images/placeholders/Supply Chain Optimization.jpeg"
-            alt="Supply chain optimization background"
-            fill
-            className="object-cover"
-          />
-          {/* Dark Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-primary-navy/90 to-primary-navy/70"></div>
-
-          {/* Content */}
-          <div className="relative z-10">
-            <h2 className="text-3xl font-bold mb-4 text-white">Ready to Optimize Your Supply Chain?</h2>
-            <p className="text-lg text-gray-200 mb-8">
-              Let us help you design a customized logistics solution that fits your business needs.
-            </p>
-            <Link href="/contact">
-              <Button size="lg" variant="secondary">
-                Contact Us Today
-              </Button>
-            </Link>
-          </div>
         </div>
       </Section>
     </>

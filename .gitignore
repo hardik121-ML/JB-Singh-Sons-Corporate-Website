@@ -34,3 +34,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Large video files (keep only /public/videos/)
+public/Logistics-20251119T135955Z-1-001/**/*.mp4
+public/Logistics-20251119T135955Z-1-001/**/*.crdownload
+
+# Windows Zone.Identifier files
+*:Zone.Identifier

@@ -11,10 +11,10 @@ export default function ServiceTemplate({ service }: ServiceTemplateProps) {
   return (
     <>
       {/* Hero Banner */}
-      <Section className="bg-gradient-to-br from-primary-navy to-primary-navy/90 text-white pt-32 pb-16">
+      <Section className="bg-[#F8F9FC] pt-32 pb-16">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">{service.title}</h1>
-          <p className="text-lg md:text-xl text-gray-200 leading-relaxed">
+          <h1 className="text-4xl md:text-5xl font-bold text-[#0A0A0A] mb-6 uppercase">{service.title}</h1>
+          <p className="text-lg md:text-xl text-[#4B5563] leading-relaxed">
             {service.description}
           </p>
         </div>
@@ -23,7 +23,7 @@ export default function ServiceTemplate({ service }: ServiceTemplateProps) {
       {/* Capabilities Section */}
       <Section>
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-neutral-dark mb-8">Capabilities</h2>
+          <h2 className="text-3xl font-bold text-[#0A0A0A] mb-8">Capabilities</h2>
           <div className="grid md:grid-cols-2 gap-4">
             {service.capabilities.map((capability, index) => (
               <div key={index} className="flex items-start space-x-3 p-4 bg-neutral-light rounded-lg">
@@ -38,9 +38,9 @@ export default function ServiceTemplate({ service }: ServiceTemplateProps) {
       </Section>
 
       {/* Workflow Diagram Placeholder */}
-      <Section background="light">
+      <Section className="bg-[#F2F4F7]">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-neutral-dark mb-8">Our Process</h2>
+          <h2 className="text-3xl font-bold text-[#0A0A0A] mb-8">Our Process</h2>
           <div className="aspect-video bg-white rounded-2xl shadow-md flex items-center justify-center">
             <div className="text-gray-400">
               <svg
@@ -64,15 +64,12 @@ export default function ServiceTemplate({ service }: ServiceTemplateProps) {
 
       {/* CTA Section */}
       <Section>
-        <div className="max-w-4xl mx-auto text-center bg-neutral-light rounded-2xl p-12">
-          <h2 className="text-3xl font-bold text-neutral-dark mb-4">
-            Ready to Get Started?
+        <div className="max-w-4xl mx-auto text-center bg-[#F8F9FC] rounded-2xl p-12">
+          <h2 className="text-3xl font-bold text-[#0A0A0A] mb-4">
+            Need tailored logistics solutions for your business?
           </h2>
-          <p className="text-lg text-gray-600 mb-8">
-            Contact us today to discuss your {service.title.toLowerCase()} needs.
-          </p>
           <Link href="/contact">
-            <Button size="lg">Get in Touch</Button>
+            <Button size="lg">Contact Us</Button>
           </Link>
         </div>
       </Section>

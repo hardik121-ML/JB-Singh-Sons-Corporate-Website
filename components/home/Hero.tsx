@@ -1,32 +1,39 @@
 import Link from "next/link";
-import Image from "next/image";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import { HERO_CONTENT } from "@/lib/constants";
 
 export default function Hero() {
   return (
-    <section className="relative bg-gradient-to-br from-neutral-light to-white py-20 md:py-32 overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-10 right-10 w-72 h-72 bg-primary-orange rounded-full blur-3xl"></div>
-        <div className="absolute bottom-10 left-10 w-96 h-96 bg-primary-navy rounded-full blur-3xl"></div>
+    <section className="relative bg-[#F8F9FC] py-20 md:py-32 overflow-hidden">
+      {/* Background Video */}
+      <div className="absolute inset-0">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover"
+        >
+          <source src="/videos/3309765-uhd_3840_2160_30fps.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-[#F8F9FC]/80"></div>
       </div>
 
       <Container className="relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Main Headline */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-dark mb-6 leading-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0A0A0A] mb-6 leading-tight">
             {HERO_CONTENT.headline}
           </h1>
 
           {/* Sub-headline */}
-          <p className="text-lg md:text-xl text-gray-600 mb-4 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-[#4B5563] mb-4 max-w-3xl mx-auto">
             {HERO_CONTENT.subheadline}
           </p>
 
           {/* Supporting Line */}
-          <p className="text-sm md:text-base text-gray-500 mb-8">
+          <p className="text-sm md:text-base text-[#9CA3AF] mb-8">
             {HERO_CONTENT.supportingLine}
           </p>
 
@@ -43,18 +50,6 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Logistics illustration */}
-        <div className="mt-16 max-w-5xl mx-auto">
-          <div className="relative aspect-video rounded-2xl overflow-hidden">
-            <Image
-              src="/images/placeholders/Logistics Illustration Placeholder - ContainersCranesShips.avif"
-              alt="Logistics operations showing containers, cranes, and ships"
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
-        </div>
       </Container>
     </section>
   );

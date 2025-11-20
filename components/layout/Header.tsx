@@ -70,7 +70,7 @@ export default function Header() {
               </Link>
             ))}
             <Link href="/contact">
-              <Button size="sm">Get in Touch</Button>
+              <Button size="sm">Contact Us</Button>
             </Link>
           </div>
 
@@ -128,7 +128,7 @@ export default function Header() {
             <div className="px-4 pt-2">
               <Link href="/contact" className="block">
                 <Button className="w-full" size="md">
-                  Get in Touch
+                  Contact Us
                 </Button>
               </Link>
             </div>

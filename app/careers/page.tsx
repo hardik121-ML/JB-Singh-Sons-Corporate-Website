@@ -34,14 +34,14 @@ export default function CareersPage() {
   return (
     <>
       {/* Hero Section */}
-      <Section className="bg-gradient-to-br from-neutral-light to-white pt-32 pb-16">
+      <Section className="bg-[#F8F9FC] pt-32 pb-16">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-neutral-dark mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-[#0A0A0A] mb-6">
             Careers at J B Singh & Sons
           </h1>
-          <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-            We hire professionals who work well in structured environments and value accuracy,
-            communication, and operational discipline.
+          <p className="text-lg md:text-xl text-[#4B5563] leading-relaxed">
+            We hire professionals who value structured work, accuracy in execution, and clear
+            communication across teams and partners.
           </p>
         </div>
       </Section>
@@ -73,11 +73,11 @@ export default function CareersPage() {
                   No Current Openings
                 </h2>
                 <p className="text-lg text-gray-200 mb-6">
-                  Currently, there are no vacancies. However, we're always looking for talented
-                  individuals to join our team.
+                  Currently, there are no vacancies. However, if you'd like to be considered for
+                  future roles, you're welcome to send your resume to our team.
                 </p>
                 <p className="text-gray-300 mb-2">
-                  You may send your resume to:
+                  Send your resume to:
                 </p>
                 <a
                   href={`mailto:${COMPANY_INFO.contact.email}`}

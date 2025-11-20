@@ -5,44 +5,46 @@
 **Client**: J B Singh & Sons
 **Project Type**: Corporate Logistics Website
 **Technology**: Next.js 14, TypeScript, Tailwind CSS
-**Completion Date**: November 17, 2025
+**Initial Completion**: November 17, 2025
+**Content Update**: November 20, 2025
 
 ---
 
 ## ✅ What Has Been Delivered
 
-### 1. Complete Website Structure (11 Pages)
+### 1. Complete Website Structure (17 Routes)
 
 #### Core Pages
 - ✅ **Home** (`/`) - Fully functional with all sections
-  - Hero section with CTAs
-  - Statistics block
+  - Hero section with video background
+  - Statistics block with subtexts
+  - Clients section (18 companies)
   - About preview
-  - Services grid (9 services)
-  - CSR preview
+  - Services grid (8 services in carousels)
 
 - ✅ **About Us** (`/about`) - Complete with all content
   - Mission and Vision
   - Why Choose Us (5 points)
-  - Team section (placeholder for photos)
-  - Statistics block
+  - Team section with description
+  - Footer CTA
 
-- ✅ **Services** (`/services`) - Index page with 9 services
+- ✅ **Services** (`/services`) - Landing page with grid layout
+  - Core Services: 3-card grid
+  - Third-Party Services: 5-card grid (3+2 layout)
 
-- ✅ **9 Individual Service Pages** - All fully functional
-  1. Freight Forwarding
-  2. Custom Clearance
-  3. Project Management / Break Bulk Movement
-  4. Marine Logistics
-  5. Transportation Service
-  6. Equipment Hire
-  7. Warehousing & Distribution
-  8. Domestic Express
-  9. Cross Trade Services
+- ✅ **8 Individual Service Pages** - All fully functional
+  - **Core Services (3)**:
+    1. Custom Clearance (`/services/custom-clearance`)
+    2. Transportation (`/services/transportation`)
+    3. Equipment Hire (`/services/equipment-hire`)
+  - **Partner Services (5)**:
+    4. Freight Forwarding (`/services/freight-forwarding`)
+    5. Marine Logistics (`/services/marine-logistics`)
+    6. Warehousing & Distribution (`/services/warehousing-distribution`)
+    7. Domestic Express (`/services/domestic-express`)
+    8. Cross Trade Services (`/services/cross-trade-services`)
 
 - ✅ **Solutions** (`/solutions`) - 9 solution blocks
-
-- ✅ **CSR** (`/csr`) - Corporate social responsibility page
 
 - ✅ **Careers** (`/careers`) - Dynamic job listings
 
@@ -67,13 +69,18 @@
 - ✅ Textarea (with validation)
 
 #### Page-Specific Components
-- ✅ Hero section
-- ✅ Stats block
-- ✅ About preview
-- ✅ Services grid
-- ✅ CSR preview
+- ✅ Hero section (with video background)
+- ✅ Stats block (with subtexts)
+- ✅ Clients section (18 companies with industry icons)
+- ✅ About preview (with Logistics folder images)
+- ✅ Services grid (carousel on home, grid on services page)
 - ✅ Service template
 - ✅ Contact form (React Hook Form + EmailJS)
+
+#### Service Page Components
+- ✅ CustomClearanceFlowchart (hub-and-spoke with logo center)
+- ✅ EquipmentHireCarousel (auto-sliding with images)
+- ✅ AnimatedCapabilities (Framer Motion staggered animations)
 
 ### 3. Functionality Implemented
 
@@ -86,7 +93,7 @@
 - ✅ Sitemap generation (next-sitemap)
 - ✅ TypeScript for type safety
 - ✅ Tailwind CSS design system
-- ✅ Framer Motion ready (for future animations)
+- ✅ Framer Motion animations (capabilities, freight modes, process cards)
 
 ### 4. Design System
 
@@ -111,14 +118,14 @@
 
 | Metric | Target | Status |
 |--------|--------|--------|
-| Pages Built | 11 | ✅ 11/11 |
-| Service Pages | 9 | ✅ 9/9 |
+| Total Routes | 17 | ✅ 17/17 |
+| Service Pages | 8 | ✅ 8/8 |
 | Page Load Speed | <2.5s | 🎯 Optimized |
 | Lighthouse Score | 90+ | 🎯 Ready for testing |
 | Responsive Design | All devices | ✅ Complete |
 | SEO Optimization | All pages | ✅ Complete |
 | Form Functionality | Working | ✅ Ready (needs config) |
-| CMS Coverage | 100% ready | ✅ Structure in place |
+| Content Spec | 100% | ✅ Complete |
 
 ---
 
@@ -338,21 +345,25 @@ See **OUT_OF_SCOPE.md** for detailed list. Key features:
 ## 🎯 Success Metrics
 
 ### Achieved
-✅ All 11 pages built
-✅ All 9 service pages complete
+✅ All 17 routes built
+✅ All 8 service pages complete with hero backgrounds
 ✅ Responsive across all devices
 ✅ SEO-optimized structure
 ✅ Contact form implemented
-✅ Professional design
+✅ Professional design with animations
 ✅ TypeScript type safety
 ✅ Performance optimized
 ✅ Documentation complete
+✅ Content spec fully implemented
+✅ Clients section with 18 companies and industry icons
+✅ Animated capabilities on all service pages
+✅ Custom flowchart and carousel components
 
 ### Pending Configuration
 🔄 EmailJS credentials
 🔄 Client assets (images, logos)
 🔄 Legal content (Terms, Privacy)
-🔄 Company statistics
+🔄 Hero video file
 
 ### Future Goals (Out of Scope)
 ⏳ CMS integration
@@ -368,9 +379,8 @@ See **OUT_OF_SCOPE.md** for detailed list. Key features:
 JBSingh_Website/
 ├── app/                     # Next.js pages
 │   ├── about/
-│   ├── services/
+│   ├── services/            # Landing + 8 service pages
 │   ├── solutions/
-│   ├── csr/
 │   ├── careers/
 │   ├── contact/
 │   ├── terms-and-conditions/
@@ -381,20 +391,21 @@ JBSingh_Website/
 ├── components/              # React components
 │   ├── ui/
 │   ├── layout/
-│   ├── home/
-│   ├── services/
+│   ├── home/                # Hero, StatsBlock, ClientsSection, AboutPreview, ServicesGrid
+│   ├── services/            # ServiceTemplate, AnimatedCapabilities, CustomClearanceFlowchart, EquipmentHireCarousel
 │   └── contact/
 ├── lib/                     # Utilities
-│   ├── constants.ts
+│   ├── constants.ts         # All site content (CLIENTS, SERVICES, etc.)
 │   ├── types.ts
 │   └── utils.ts
 ├── public/                  # Static assets
 │   ├── images/
-│   └── icons/
+│   └── videos/
 ├── PLAN.md
 ├── PLACEHOLDERS.md
 ├── OUT_OF_SCOPE.md
 ├── PROJECT_SUMMARY.md
+├── CHANGELOG.md
 ├── README.md
 ├── package.json
 ├── tsconfig.json
@@ -421,6 +432,7 @@ The codebase is clean, well-documented, and ready for future enhancements. All o
 
 ---
 
-**Document Version**: 1.0
+**Document Version**: 2.1
 **Created**: November 17, 2025
-**Status**: ✅ Development Complete - Ready for Client Review
+**Updated**: November 20, 2025
+**Status**: ✅ Visual Enhancements Complete - Ready for Final Review

@@ -9,13 +9,14 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero Section */}
-      <Section className="bg-gradient-to-br from-neutral-light to-white pt-32 pb-16">
+      <Section className="bg-[#F8F9FC] pt-32 pb-16">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-neutral-dark mb-6">
-            Contact Us
+          <h1 className="text-4xl md:text-5xl font-bold text-[#0A0A0A] mb-6">
+            Get in Touch
           </h1>
-          <p className="text-lg md:text-xl text-gray-600">
-            Get in touch with us for all your logistics needs. We're here to help.
+          <p className="text-lg md:text-xl text-[#4B5563]">
+            For enquiries, quotations, or support, contact us using the details below or submit
+            the form. Our team will respond promptly.
           </p>
         </div>
       </Section>
@@ -26,8 +27,8 @@ export default function ContactPage() {
           {/* Contact Information */}
           <div className="space-y-8">
             <div>
-              <h2 className="text-2xl font-bold text-neutral-dark mb-6">Get in Touch</h2>
-              <p className="text-gray-600 mb-6">
+              <h2 className="text-2xl font-bold text-[#0A0A0A] mb-6">Contact Information</h2>
+              <p className="text-[#4B5563] mb-6">
                 Have a question or need assistance? Reach out to us using the contact information
                 below or fill out the form.
               </p>
@@ -35,8 +36,8 @@ export default function ContactPage() {
 
             {/* Addresses */}
             <div>
-              <h3 className="text-lg font-semibold text-neutral-dark mb-4 flex items-center">
-                <MapPin size={24} weight="duotone" className="mr-2 text-primary-orange" /> Our Offices
+              <h3 className="text-lg font-semibold text-[#0A0A0A] mb-4 flex items-center">
+                <MapPin size={24} weight="duotone" className="mr-2 text-[#0E287A]" /> Our Offices
               </h3>
 
               {/* Head Office */}
@@ -74,8 +75,8 @@ export default function ContactPage() {
 
             {/* Contact Details */}
             <div>
-              <h3 className="text-lg font-semibold text-neutral-dark mb-3 flex items-center">
-                <Phone size={24} weight="duotone" className="mr-2 text-primary-orange" /> Contact Details
+              <h3 className="text-lg font-semibold text-[#0A0A0A] mb-3 flex items-center">
+                <Phone size={24} weight="duotone" className="mr-2 text-[#0E287A]" /> Contact Details
               </h3>
               <div className="space-y-2 text-gray-700">
                 <p>
@@ -115,8 +116,8 @@ export default function ContactPage() {
 
             {/* Map Embed */}
             <div>
-              <h3 className="text-lg font-semibold text-neutral-dark mb-3 flex items-center">
-                <MapTrifold size={24} weight="duotone" className="mr-2 text-primary-orange" /> Location
+              <h3 className="text-lg font-semibold text-[#0A0A0A] mb-3 flex items-center">
+                <MapTrifold size={24} weight="duotone" className="mr-2 text-[#0E287A]" /> Location
               </h3>
               <div className="aspect-video bg-gray-200 rounded-2xl overflow-hidden">
                 <iframe
@@ -135,7 +136,7 @@ export default function ContactPage() {
 
           {/* Contact Form */}
           <div className="bg-white p-8 rounded-2xl shadow-lg">
-            <h2 className="text-2xl font-bold text-neutral-dark mb-6">Send us a Message</h2>
+            <h2 className="text-2xl font-bold text-[#0A0A0A] mb-6">Send us a Message</h2>
             <ContactForm />
           </div>
         </div>
