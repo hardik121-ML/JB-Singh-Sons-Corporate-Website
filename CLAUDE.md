@@ -33,25 +33,36 @@ npm run lint         # ESLint
 
 ### Service Page Pattern
 
-All 8 service pages follow identical structure:
+Each service page is a static file with custom layout. All share this metadata pattern:
 ```typescript
-// /app/services/[slug]/page.tsx
-import ServiceTemplate from "@/components/services/ServiceTemplate";
+// /app/services/custom-clearance/page.tsx
 import { SERVICES } from "@/lib/constants";
 
-const service = SERVICES.find((s) => s.id === "service-id")!;
+const service = SERVICES.find((s) => s.id === "custom-clearance")!;
 
 export const metadata: Metadata = {
   title: service.title,
   description: service.description,
 };
 
-export default function ServicePage() {
-  return <ServiceTemplate service={service} />;
+export default function CustomClearancePage() {
+  return (
+    <>
+      {/* Hero with background image */}
+      {/* Custom sections (flowchart, carousel, etc.) */}
+      {/* Capabilities grid */}
+      {/* CTA section */}
+    </>
+  );
 }
 ```
 
-**Adding a service**: Add to `SERVICES` array → Create page file → Sitemap auto-updates
+**Service pages have custom layouts** - not a shared template. Each uses different components:
+- Custom Clearance → `CustomClearanceFlowchart`
+- Equipment Hire → `EquipmentHireCarousel`
+- Others → `AnimatedCapabilities` grid
+
+**Adding a service**: Add to `SERVICES` array → Create page file in `/app/services/[slug]/` → Sitemap auto-updates
 
 ### Client Component + Metadata Pattern
 
@@ -93,6 +104,10 @@ Use `cn()` from `/lib/utils.ts` for className merging (clsx + tailwind-merge).
 - Mobile menu: below `lg`
 - Carousel auto-scroll: at `xl`
 
+**Typography**: Inter font via `next/font/google` (configured in root layout)
+- Responsive font sizes in Tailwind config: `text-responsive-sm`, `text-responsive-base`, `text-responsive-lg`, etc.
+- These use `max()` with viewport units for fluid scaling
+
 **Icons**: Phosphor Icons with `weight="duotone"`. Core services use red, partner services use blue.
 
 ## Environment Variables
@@ -124,7 +139,7 @@ Site builds without these; contact form won't send emails.
 - Use Next.js `Image` with `fill` prop, `priority` for above-fold
 
 ### Types
-`/lib/types.ts`: `Service`, `Solution`, `ContactFormData`
+`/lib/types.ts`: `Service`, `Solution`, `NavLink`, `Stat`, `CSRCategory`, `ContactFormData`
 
 ### Animations
 Framer Motion is used for page transitions and component animations. Import from `framer-motion`.
@@ -146,19 +161,8 @@ Then hard refresh browser.
 
 Set env vars in Vercel Dashboard → Project Settings → Environment Variables.
 
-## Documentation
+## Project Documentation
 
-- `PLAN.md` - Project specifications
+- `PLAN.md` - Full project specs and CMS structure
 - `PLACEHOLDERS.md` - Assets needed from client
-- `OUT_OF_SCOPE.md` - Features requiring approval
-- `PROJECT_SUMMARY.md` - Completion status
-- `CHANGELOG.md` - Version history
-
-## Dependencies
-
-Key libraries in use:
-- **@phosphor-icons/react** - Icon library (use `weight="duotone"`)
-- **framer-motion** - Animations
-- **react-hook-form** - Form handling
-- **@emailjs/browser** - Contact form email delivery
-- **clsx + tailwind-merge** - Class name utilities (via `cn()`)
+- `OUT_OF_SCOPE.md` - Features requiring client approval (portal, tracking, chatbot, etc.)
