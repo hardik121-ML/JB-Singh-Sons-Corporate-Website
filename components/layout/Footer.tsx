@@ -1,13 +1,35 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { COMPANY_INFO, FOOTER_LINKS } from "@/lib/constants";
+import { useScroll } from "@/lib/ScrollContext";
 import Container from "@/components/ui/Container";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const pathname = usePathname();
+  const { scrollToSection } = useScroll();
+
+  // Handle smooth scroll for anchor links
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith("/#")) {
+      e.preventDefault();
+      const targetId = href.replace("/#", "");
+
+      if (pathname === "/") {
+        // Already on home page - use GSAP smooth scroll
+        scrollToSection(targetId);
+      } else {
+        // Navigate to home page with hash - browser will handle scroll
+        window.location.href = href;
+      }
+    }
+  };
 
   return (
-    <footer className="bg-[#0E287A] text-white">
+    <footer className="bg-black text-white">
       <Container className="py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 items-start">
           {/* Company Info */}
@@ -38,6 +60,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
+                    onClick={(e) => handleLinkClick(e, link.href)}
                     className="text-sm text-[#D1D5DB] hover:text-white transition-colors"
                   >
                     {link.label}

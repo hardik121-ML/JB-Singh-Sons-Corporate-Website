@@ -1,0 +1,600 @@
+{
+  "timestamp": "2025-11-24T13:27:28.307Z",
+  "totalPages": 16,
+  "totalViewports": 2,
+  "totalIssues": 20,
+  "issues": [
+    {
+      "page": "homepage",
+      "viewport": "desktop",
+      "type": "load-error",
+      "error": "Navigation timeout of 30000 ms exceeded"
+    },
+    {
+      "page": "homepage",
+      "viewport": "mobile",
+      "type": "overflow",
+      "elements": [
+        {
+          "tag": "VIDEO",
+          "class": "w-full h-full object-cover will-change-transform",
+          "rect": {
+            "left": -15.000015258789062,
+            "right": 389.99998474121094,
+            "width": 405
+          }
+        },
+        {
+          "tag": "DIV",
+          "class": "flex animate-scroll-ltr gap-4 group-hover:animation-pause",
+          "rect": {
+            "left": -78.03884887695312,
+            "right": 264.9611511230469,
+            "width": 343
+          }
+        },
+        {
+          "tag": "DIV",
+          "class": "flex-shrink-0 w-[240px]",
+          "rect": {
+            "left": -78.03884887695312,
+            "right": 161.96115112304688,
+            "width": 240
+          }
+        },
+        {
+          "tag": "DIV",
+          "class": "absolute inset-0 bg-gradient-to-br from-primary-orange/0 via-transparent to-primary-orange/0 group-hover:from-primary-orange/5 group-hover:to-primary-navy/5 rounded-xl transition-all duration-300 pointer-events-none",
+          "rect": {
+            "left": -77.03884887695312,
+            "right": 160.96115112304688,
+            "width": 238
+          }
+        },
+        {
+          "tag": "DIV",
+          "class": "flex-shrink-0 w-[240px]",
+          "rect": {
+            "left": 177.96115112304688,
+            "right": 417.9611511230469,
+            "width": 240
+          }
+        }
+      ]
+    },
+    {
+      "page": "about",
+      "viewport": "mobile",
+      "type": "overflow",
+      "elements": [
+        {
+          "tag": "DIV",
+          "class": "absolute bottom-20 right-10 w-96 h-96 bg-primary-navy/10 rounded-full blur-3xl animate-float",
+          "rect": {
+            "left": -49,
+            "right": 335,
+            "width": 384
+          }
+        },
+        {
+          "tag": "DIV",
+          "class": "absolute bottom-20 right-10 w-96 h-96 bg-primary-navy/10 rounded-full blur-3xl animate-float",
+          "rect": {
+            "left": -49,
+            "right": 335,
+            "width": 384
+          }
+        },
+        {
+          "tag": "DIV",
+          "class": "absolute top-0 left-1/4 w-96 h-96 bg-primary-orange/10 rounded-full blur-3xl",
+          "rect": {
+            "left": 93.75,
+            "right": 477.75,
+            "width": 384
+          }
+        },
+        {
+          "tag": "DIV",
+          "class": "absolute bottom-0 right-1/4 w-80 h-80 bg-white/5 rounded-full blur-3xl",
+          "rect": {
+            "left": -38.75,
+            "right": 281.25,
+            "width": 320
+          }
+        }
+      ]
+    },
+    {
+      "page": "services",
+      "viewport": "desktop",
+      "type": "overflow",
+      "elements": [
+        {
+          "tag": "DIV",
+          "class": "absolute top-20 -left-20 w-80 h-80 bg-primary-orange/10 rounded-full blur-3xl",
+          "rect": {
+            "left": -80,
+            "right": 240,
+            "width": 320
+          }
+        },
+        {
+          "tag": "DIV",
+          "class": "absolute bottom-20 -right-20 w-96 h-96 bg-primary-navy/10 rounded-full blur-3xl",
+          "rect": {
+            "left": 1616,
+            "right": 2000,
+            "width": 384
+          }
+        }
+      ]
+    },
+    {
+      "page": "services",
+      "viewport": "mobile",
+      "type": "overflow",
+      "elements": [
+        {
+          "tag": "DIV",
+          "class": "absolute bottom-20 right-10 w-96 h-96 bg-primary-navy/10 rounded-full blur-3xl animate-float",
+          "rect": {
+            "left": -49,
+            "right": 335,
+            "width": 384
+          }
+        },
+        {
+          "tag": "DIV",
+          "class": "absolute top-20 -left-20 w-80 h-80 bg-primary-orange/10 rounded-full blur-3xl",
+          "rect": {
+            "left": -80,
+            "right": 240,
+            "width": 320
+          }
+        },
+        {
+          "tag": "DIV",
+          "class": "absolute bottom-20 -right-20 w-96 h-96 bg-primary-navy/10 rounded-full blur-3xl",
+          "rect": {
+            "left": 71,
+            "right": 455,
+            "width": 384
+          }
+        },
+        {
+          "tag": "DIV",
+          "class": "absolute top-0 left-1/4 w-96 h-96 bg-primary-orange/10 rounded-full blur-3xl",
+          "rect": {
+            "left": 93.75,
+            "right": 477.75,
+            "width": 384
+          }
+        },
+        {
+          "tag": "DIV",
+          "class": "absolute bottom-0 right-1/4 w-80 h-80 bg-white/5 rounded-full blur-3xl",
+          "rect": {
+            "left": -38.75,
+            "right": 281.25,
+            "width": 320
+          }
+        }
+      ]
+    },
+    {
+      "page": "freight-forwarding",
+      "viewport": "mobile",
+      "type": "overflow",
+      "elements": [
+        {
+          "tag": "DIV",
+          "class": "absolute top-0 left-1/4 w-96 h-96 bg-primary-orange/10 rounded-full blur-3xl",
+          "rect": {
+            "left": 93.75,
+            "right": 477.75,
+            "width": 384
+          }
+        },
+        {
+          "tag": "DIV",
+          "class": "absolute bottom-0 right-1/4 w-80 h-80 bg-white/5 rounded-full blur-3xl",
+          "rect": {
+            "left": -38.75,
+            "right": 281.25,
+            "width": 320
+          }
+        }
+      ]
+    },
+    {
+      "page": "custom-clearance",
+      "viewport": "mobile",
+      "type": "overflow",
+      "elements": [
+        {
+          "tag": "DIV",
+          "class": "absolute top-0 left-1/4 w-96 h-96 bg-primary-orange/10 rounded-full blur-3xl",
+          "rect": {
+            "left": 93.75,
+            "right": 477.75,
+            "width": 384
+          }
+        },
+        {
+          "tag": "DIV",
+          "class": "absolute bottom-0 right-1/4 w-80 h-80 bg-white/5 rounded-full blur-3xl",
+          "rect": {
+            "left": -38.75,
+            "right": 281.25,
+            "width": 320
+          }
+        }
+      ]
+    },
+    {
+      "page": "marine-logistics",
+      "viewport": "mobile",
+      "type": "overflow",
+      "elements": [
+        {
+          "tag": "DIV",
+          "class": "absolute top-0 left-1/4 w-96 h-96 bg-primary-orange/10 rounded-full blur-3xl",
+          "rect": {
+            "left": 93.75,
+            "right": 477.75,
+            "width": 384
+          }
+        },
+        {
+          "tag": "DIV",
+          "class": "absolute bottom-0 right-1/4 w-80 h-80 bg-white/5 rounded-full blur-3xl",
+          "rect": {
+            "left": -38.75,
+            "right": 281.25,
+            "width": 320
+          }
+        }
+      ]
+    },
+    {
+      "page": "transportation",
+      "viewport": "mobile",
+      "type": "overflow",
+      "elements": [
+        {
+          "tag": "DIV",
+          "class": "absolute top-0 left-1/4 w-96 h-96 bg-primary-orange/10 rounded-full blur-3xl",
+          "rect": {
+            "left": 93.75,
+            "right": 477.75,
+            "width": 384
+          }
+        },
+        {
+          "tag": "DIV",
+          "class": "absolute bottom-0 right-1/4 w-80 h-80 bg-white/5 rounded-full blur-3xl",
+          "rect": {
+            "left": -38.75,
+            "right": 281.25,
+            "width": 320
+          }
+        }
+      ]
+    },
+    {
+      "page": "equipment-hire",
+      "viewport": "desktop",
+      "type": "overflow",
+      "elements": [
+        {
+          "tag": "DIV",
+          "class": "flex transition-transform duration-500 ease-in-out",
+          "rect": {
+            "left": -1472,
+            "right": -256,
+            "width": 1216
+          }
+        },
+        {
+          "tag": "DIV",
+          "class": "flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 px-2",
+          "rect": {
+            "left": -1472,
+            "right": -1168,
+            "width": 304
+          }
+        },
+        {
+          "tag": "DIV",
+          "class": "relative h-44 sm:h-36 md:h-40 w-full",
+          "rect": {
+            "left": -1463,
+            "right": -1177,
+            "width": 286
+          }
+        },
+        {
+          "tag": "IMG",
+          "class": "object-cover",
+          "rect": {
+            "left": -1463,
+            "right": -1177,
+            "width": 286
+          }
+        },
+        {
+          "tag": "DIV",
+          "class": "absolute top-3 left-3 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-lg flex items-center justify-center shadow-sm",
+          "rect": {
+            "left": -1451,
+            "right": -1411,
+            "width": 40
+          }
+        }
+      ]
+    },
+    {
+      "page": "equipment-hire",
+      "viewport": "mobile",
+      "type": "broken-images",
+      "images": [
+        "http://localhost:3000/_next/image?url=%2FLogistics-20251119T135955Z-1-001%2FCargo-Logistics%2Fventi-views-FPKnAO-CF6M-unsplash.jpg&w=3840&q=75",
+        "http://localhost:3000/_next/image?url=%2FLogistics-20251119T135955Z-1-001%2FCargo-Logistics%2Fventi-views-FPKnAO-CF6M-unsplash.jpg&w=3840&q=75",
+        "http://localhost:3000/_next/image?url=%2FLogistics-20251119T135955Z-1-001%2FCargo-Logistics%2Fventi-views-FPKnAO-CF6M-unsplash.jpg&w=3840&q=75"
+      ]
+    },
+    {
+      "page": "equipment-hire",
+      "viewport": "mobile",
+      "type": "overflow",
+      "elements": [
+        {
+          "tag": "DIV",
+          "class": "flex transition-transform duration-500 ease-in-out",
+          "rect": {
+            "left": -2042,
+            "right": -1699,
+            "width": 343
+          }
+        },
+        {
+          "tag": "DIV",
+          "class": "flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 px-2",
+          "rect": {
+            "left": -2042,
+            "right": -1699,
+            "width": 343
+          }
+        },
+        {
+          "tag": "DIV",
+          "class": "relative h-44 sm:h-36 md:h-40 w-full",
+          "rect": {
+            "left": -2033,
+            "right": -1708,
+            "width": 325
+          }
+        },
+        {
+          "tag": "IMG",
+          "class": "object-cover",
+          "rect": {
+            "left": -2033,
+            "right": -1708,
+            "width": 325
+          }
+        },
+        {
+          "tag": "DIV",
+          "class": "absolute top-3 left-3 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-lg flex items-center justify-center shadow-sm",
+          "rect": {
+            "left": -2021,
+            "right": -1981,
+            "width": 40
+          }
+        }
+      ]
+    },
+    {
+      "page": "warehousing-distribution",
+      "viewport": "mobile",
+      "type": "overflow",
+      "elements": [
+        {
+          "tag": "DIV",
+          "class": "absolute top-0 left-1/4 w-96 h-96 bg-primary-orange/10 rounded-full blur-3xl",
+          "rect": {
+            "left": 93.75,
+            "right": 477.75,
+            "width": 384
+          }
+        },
+        {
+          "tag": "DIV",
+          "class": "absolute bottom-0 right-1/4 w-80 h-80 bg-white/5 rounded-full blur-3xl",
+          "rect": {
+            "left": -38.75,
+            "right": 281.25,
+            "width": 320
+          }
+        }
+      ]
+    },
+    {
+      "page": "domestic-express",
+      "viewport": "mobile",
+      "type": "overflow",
+      "elements": [
+        {
+          "tag": "DIV",
+          "class": "absolute top-0 left-1/4 w-96 h-96 bg-primary-orange/10 rounded-full blur-3xl",
+          "rect": {
+            "left": 93.75,
+            "right": 477.75,
+            "width": 384
+          }
+        },
+        {
+          "tag": "DIV",
+          "class": "absolute bottom-0 right-1/4 w-80 h-80 bg-white/5 rounded-full blur-3xl",
+          "rect": {
+            "left": -38.75,
+            "right": 281.25,
+            "width": 320
+          }
+        }
+      ]
+    },
+    {
+      "page": "cross-trade-services",
+      "viewport": "mobile",
+      "type": "overflow",
+      "elements": [
+        {
+          "tag": "DIV",
+          "class": "absolute top-0 left-1/4 w-96 h-96 bg-primary-orange/10 rounded-full blur-3xl",
+          "rect": {
+            "left": 93.75,
+            "right": 477.75,
+            "width": 384
+          }
+        },
+        {
+          "tag": "DIV",
+          "class": "absolute bottom-0 right-1/4 w-80 h-80 bg-white/5 rounded-full blur-3xl",
+          "rect": {
+            "left": -38.75,
+            "right": 281.25,
+            "width": 320
+          }
+        }
+      ]
+    },
+    {
+      "page": "solutions",
+      "viewport": "mobile",
+      "type": "overflow",
+      "elements": [
+        {
+          "tag": "DIV",
+          "class": "absolute top-0 left-1/4 w-96 h-96 bg-primary-orange/10 rounded-full blur-3xl",
+          "rect": {
+            "left": 93.75,
+            "right": 477.75,
+            "width": 384
+          }
+        },
+        {
+          "tag": "DIV",
+          "class": "absolute bottom-0 right-1/4 w-80 h-80 bg-white/5 rounded-full blur-3xl",
+          "rect": {
+            "left": -38.75,
+            "right": 281.25,
+            "width": 320
+          }
+        }
+      ]
+    },
+    {
+      "page": "careers",
+      "viewport": "mobile",
+      "type": "overflow",
+      "elements": [
+        {
+          "tag": "DIV",
+          "class": "absolute top-0 left-1/4 w-96 h-96 bg-primary-orange/10 rounded-full blur-3xl",
+          "rect": {
+            "left": 93.75,
+            "right": 477.75,
+            "width": 384
+          }
+        },
+        {
+          "tag": "DIV",
+          "class": "absolute bottom-0 right-1/4 w-80 h-80 bg-white/5 rounded-full blur-3xl",
+          "rect": {
+            "left": -38.75,
+            "right": 281.25,
+            "width": 320
+          }
+        }
+      ]
+    },
+    {
+      "page": "contact",
+      "viewport": "mobile",
+      "type": "overflow",
+      "elements": [
+        {
+          "tag": "DIV",
+          "class": "absolute top-0 left-1/4 w-96 h-96 bg-primary-orange/10 rounded-full blur-3xl",
+          "rect": {
+            "left": 93.75,
+            "right": 477.75,
+            "width": 384
+          }
+        },
+        {
+          "tag": "DIV",
+          "class": "absolute bottom-0 right-1/4 w-80 h-80 bg-white/5 rounded-full blur-3xl",
+          "rect": {
+            "left": -38.75,
+            "right": 281.25,
+            "width": 320
+          }
+        }
+      ]
+    },
+    {
+      "page": "terms",
+      "viewport": "mobile",
+      "type": "overflow",
+      "elements": [
+        {
+          "tag": "DIV",
+          "class": "absolute top-0 left-1/4 w-96 h-96 bg-primary-orange/10 rounded-full blur-3xl",
+          "rect": {
+            "left": 93.75,
+            "right": 477.75,
+            "width": 384
+          }
+        },
+        {
+          "tag": "DIV",
+          "class": "absolute bottom-0 right-1/4 w-80 h-80 bg-white/5 rounded-full blur-3xl",
+          "rect": {
+            "left": -38.75,
+            "right": 281.25,
+            "width": 320
+          }
+        }
+      ]
+    },
+    {
+      "page": "privacy",
+      "viewport": "mobile",
+      "type": "overflow",
+      "elements": [
+        {
+          "tag": "DIV",
+          "class": "absolute top-0 left-1/4 w-96 h-96 bg-primary-orange/10 rounded-full blur-3xl",
+          "rect": {
+            "left": 93.75,
+            "right": 477.75,
+            "width": 384
+          }
+        },
+        {
+          "tag": "DIV",
+          "class": "absolute bottom-0 right-1/4 w-80 h-80 bg-white/5 rounded-full blur-3xl",
+          "rect": {
+            "left": -38.75,
+            "right": 281.25,
+            "width": 320
+          }
+        }
+      ]
+    }
+  ]
+}

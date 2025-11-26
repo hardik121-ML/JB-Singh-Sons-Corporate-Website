@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { HTMLAttributes } from "react";
+import { HTMLAttributes, forwardRef } from "react";
 import Container from "./Container";
 
 interface SectionProps extends HTMLAttributes<HTMLElement> {
@@ -8,16 +8,20 @@ interface SectionProps extends HTMLAttributes<HTMLElement> {
   background?: "white" | "light" | "dark";
 }
 
-export default function Section({
-  className,
-  containerSize = "lg",
-  noPadding = false,
-  background = "white",
-  children,
-  ...props
-}: SectionProps) {
+const Section = forwardRef<HTMLElement, SectionProps>(function Section(
+  {
+    className,
+    containerSize = "lg",
+    noPadding = false,
+    background = "white",
+    children,
+    ...props
+  },
+  ref
+) {
   return (
     <section
+      ref={ref}
       className={cn(
         !noPadding && "py-16 md:py-24",
         {
@@ -32,4 +36,6 @@ export default function Section({
       <Container size={containerSize}>{children}</Container>
     </section>
   );
-}
+});
+
+export default Section;

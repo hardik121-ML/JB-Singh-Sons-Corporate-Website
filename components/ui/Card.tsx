@@ -6,11 +6,15 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 export function Card({ className, hover = false, children, ...props }: CardProps) {
+  // Check if glass-card class is being used to avoid conflicting styles
+  const isGlassCard = className?.includes("glass-card");
+
   return (
     <div
       className={cn(
-        "rounded-2vmax bg-white shadow-md overflow-hidden flex flex-col",
-        hover && "transition-all duration-300 hover:shadow-xl hover:-translate-y-1",
+        !isGlassCard && "rounded-2vmax bg-white shadow-md",
+        "overflow-hidden flex flex-col",
+        hover && !isGlassCard && "transition-all duration-300 hover:shadow-xl hover:-translate-y-1",
         className
       )}
       {...props}

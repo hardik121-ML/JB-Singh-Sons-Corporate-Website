@@ -7,25 +7,28 @@ A modern, responsive corporate website for J B Singh & Sons, a logistics service
 - **Framework**: Next.js 14 (App Router)
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS
-- **Animations**: Framer Motion
+- **Animations**: GSAP (GreenSock) + Framer Motion
 - **Forms**: React Hook Form + EmailJS
+- **Icons**: Phosphor Icons
 - **SEO**: next-sitemap
-- **Deployment**: Vercel (https://jbsingh-website.vercel.app)
+- **Deployment**: Vercel
 
 ## 📋 Features
 
 - ✅ Fully responsive design (mobile-first)
 - ✅ 17 pages with SEO optimization
-- ✅ Sticky navigation with mobile menu
+- ✅ Sticky glassmorphism navigation with mobile menu
+- ✅ Hero section with video background
+- ✅ Scroll-coupled ticker tape animations (GSAP)
+- ✅ ScrollTrigger reveal animations
 - ✅ Contact form with email delivery (EmailJS)
 - ✅ Service detail pages (8 services)
-- ✅ Responsive service carousels (manual scroll on mobile/tablet, auto-scroll on desktop)
+- ✅ Responsive service carousels
 - ✅ Solutions page
 - ✅ Careers page
-- ✅ Modern UI with Tailwind CSS
+- ✅ Modern glassmorphism UI with Tailwind CSS
 - ✅ TypeScript for type safety
 - ✅ Performance optimized
-- 🔄 CMS integration (future)
 
 ## 🏗️ Project Structure
 

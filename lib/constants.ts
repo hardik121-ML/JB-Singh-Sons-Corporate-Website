@@ -46,13 +46,14 @@ Maharashtra, India`,
   yearsInOperation: "20+",
 };
 
-// Navigation Links
+// Navigation Links - SPA scroll order
 export const NAV_LINKS = [
-  { label: "Home", href: "/" },
-  { label: "About Us", href: "/about" },
-  { label: "Services", href: "/services" },
-  { label: "Solutions", href: "/solutions" },
-  { label: "Careers", href: "/careers" },
+  { label: "Home", href: "/#home" },
+  { label: "Services", href: "/#services" },
+  { label: "Solutions", href: "/#solutions" },
+  { label: "About Us", href: "/#about" },
+  { label: "Careers", href: "/#careers" },
+  { label: "Contact Us", href: "/#contact" },
 ];
 
 // Services Data
@@ -254,24 +255,24 @@ export const SOLUTIONS = [
 // Stats Data
 export const STATS = [
   {
-    label: "Years in Operations",
+    label: "Years of Excellence",
     value: "20+",
-    subtext: "Serving clients since 2003"
+    subtext: "Trusted since 2003"
   },
   {
-    label: "Regulatory Accuracy",
-    value: "100% compliance",
-    subtext: "Documentation aligned with customs standards"
+    label: "Shipments Handled",
+    value: "50000+",
+    subtext: "Successful deliveries"
   },
   {
-    label: "Global Reach",
+    label: "Global Network",
     value: "200+",
-    subtext: "Supported routes and trade lanes across 200+ global markets"
+    subtext: "Countries served"
   },
   {
-    label: "End-to-End Capabilities",
-    value: "Air · Sea · Surface",
-    subtext: "Licensed CHA with multimodal logistics coverage"
+    label: "On-Time Delivery",
+    value: "98%",
+    subtext: "Reliability guaranteed"
   },
 ];
 
@@ -311,11 +312,11 @@ export const CSR_CATEGORIES = [
 // Footer Links
 export const FOOTER_LINKS = {
   quickLinks: [
-    { label: "About Us", href: "/about" },
-    { label: "Services", href: "/services" },
-    { label: "Solutions", href: "/solutions" },
-    { label: "Careers", href: "/careers" },
-    { label: "Contact Us", href: "/contact" },
+    { label: "Services", href: "/#services" },
+    { label: "Solutions", href: "/#solutions" },
+    { label: "About Us", href: "/#about" },
+    { label: "Careers", href: "/#careers" },
+    { label: "Contact Us", href: "/#contact" },
   ],
   legal: [
     { label: "Terms and Conditions", href: "/terms-and-conditions" },
@@ -326,10 +327,10 @@ export const FOOTER_LINKS = {
 
 // Hero Content
 export const HERO_CONTENT = {
+  badge: "J B Singh & Sons",
   headline: "Reliable Logistics for Cross-Border Trade",
-  subheadline: "End-to-end cargo movement with clear communication and disciplined execution.",
-  supportingLine: "Accurate, compliant logistics for complex shipments.",
-  ctaText: "Contact Us",
+  subheadline: "End-to-end accurate compliant logistics for complex shipments",
+  ctaText: "Explore Services",
 };
 
 // About Content
@@ -345,22 +346,67 @@ export const ABOUT_CONTENT = {
 
 // Clients Data
 export const CLIENTS = [
-  { name: "A.C Steel", icon: "Factory" },
-  { name: "Aqua Alloys Pvt Ltd", icon: "Atom" },
-  { name: "Ashwin Impex", icon: "Package" },
-  { name: "Bhansali Bright Bars Pvt Ltd", icon: "Gear" },
-  { name: "Bhansali Steel (India)", icon: "Factory" },
-  { name: "Vimal Tubes", icon: "Cylinder" },
-  { name: "Citizen Metal Depot", icon: "Warehouse" },
-  { name: "M.M Metals", icon: "Cube" },
-  { name: "Madras Metals", icon: "Factory" },
-  { name: "Nexus Impex", icon: "Package" },
-  { name: "Nicro Alloys Co. (I) Pvt Ltd", icon: "Atom" },
-  { name: "Poonam Enterprises", icon: "Buildings" },
-  { name: "Pravin Metal Industries", icon: "Gear" },
-  { name: "Siddhant Steel", icon: "Factory" },
-  { name: "Ryan Impex", icon: "Package" },
-  { name: "B.J Metal & Alloys", icon: "Cube" },
-  { name: "Rajkot Impex", icon: "Package" },
-  { name: "Roshan Metal", icon: "Cube" },
+  {
+    name: "Bhansali Bright Bars Pvt Ltd",
+    industry: "Stainless Steel Manufacturing",
+    description: "Leading manufacturer of stainless steel bright bars since 1992",
+    established: "1992",
+    website: "https://www.bhansalisteel.com/"
+  },
+  {
+    name: "Aqua Alloys Pvt Ltd",
+    industry: "Alloy Steel Castings",
+    description: "ISO 9001:2015 certified manufacturer of wear-resistant cast products",
+    established: "1983",
+    website: "https://www.aqualloys.com/"
+  },
+  {
+    name: "Vimal Metal Enterprises",
+    industry: "Steel Pipes & Fittings",
+    description: "Specialist in duplex steel pipes and butt welding fittings",
+    established: "2002",
+    website: null
+  },
+  {
+    name: "A.C Steel",
+    industry: "Steel Trading",
+    description: "Trusted steel trading partner for industrial applications",
+    established: null,
+    website: null
+  },
+  {
+    name: "Ashwin Impex",
+    industry: "Import/Export",
+    description: "International trade specialist in metal products",
+    established: null,
+    website: null
+  },
+  {
+    name: "Citizen Metal Depot",
+    industry: "Metal Distribution",
+    description: "Comprehensive metal warehousing and distribution services",
+    established: null,
+    website: null
+  },
+  {
+    name: "M.M Metals",
+    industry: "Metal Trading",
+    description: "Diverse metal products supplier for various industries",
+    established: null,
+    website: null
+  },
+  {
+    name: "Nicro Alloys Co. (I) Pvt Ltd",
+    industry: "Specialty Alloys",
+    description: "Specialized nickel and chrome alloy products",
+    established: null,
+    website: null
+  },
+  {
+    name: "Pravin Metal Industries",
+    industry: "Metal Processing",
+    description: "Industrial metal processing and fabrication solutions",
+    established: null,
+    website: null
+  }
 ];

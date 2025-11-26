@@ -1,12 +1,18 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Merriweather } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
+import ClientLayout from "@/components/layout/ClientLayout";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: '--font-inter',
+  display: 'swap',
+});
+
+const merriweather = Merriweather({
+  weight: ['700'],
+  subsets: ["latin"],
+  variable: '--font-merriweather',
   display: 'swap',
 });
 
@@ -34,11 +40,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={`${inter.variable} ${merriweather.variable}`}>
       <body className={inter.className}>
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   );

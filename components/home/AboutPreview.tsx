@@ -1,58 +1,77 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import Button from "@/components/ui/Button";
 import Section from "@/components/ui/Section";
+import Container from "@/components/ui/Container";
 
 export default function AboutPreview() {
-  return (
-    <Section className="bg-white">
-      <div className="grid md:grid-cols-2 gap-12 items-center">
-        {/* Text Content */}
-        <div>
-          <h2 className="text-3xl md:text-4xl font-bold text-[#0A0A0A] mb-6">
-            Driving Growth Beyond Borders
-          </h2>
-          <p className="text-[#4B5563] text-lg leading-relaxed mb-6">
-            J B Singh & Sons has operated since 2003 with a clear focus: dependable freight
-            movement supported by strong processes, technical skill, and transparent communication.
-            We manage complex cargo with disciplined execution and industry-aligned practices
-            that help businesses move goods without delays or compliance issues.
-          </p>
-          <Link href="/about">
-            <Button variant="outline">Read More</Button>
-          </Link>
-        </div>
+  const sectionRef = useRef<HTMLElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const textRef = useRef<HTMLDivElement>(null);
 
-        {/* Image Carousel */}
-        <div className="space-y-4">
-          <div className="grid grid-cols-2 gap-4">
-            <div className="relative aspect-square rounded-2xl overflow-hidden bg-gray-100">
-              <Image
-                src="/Logistics-20251119T135955Z-1-001/Cargo-Logistics/pexels-elevate-1267338.jpg"
-                alt="J B Singh & Sons warehouse operations with forklift"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div className="relative aspect-square rounded-2xl overflow-hidden bg-gray-100">
-              <Image
-                src="/Logistics-20251119T135955Z-1-001/Cargo-Logistics/kurt-cotoaga-MP6FMO8khn4-unsplash.jpg"
-                alt="J B Singh & Sons port crane operations"
-                fill
-                className="object-cover"
-              />
-            </div>
-          </div>
-          <div className="relative aspect-[2/1] rounded-2xl overflow-hidden">
-            <Image
-              src="/Logistics-20251119T135955Z-1-001/Cargo-Logistics/venti-views-FPKnAO-CF6M-unsplash.jpg"
-              alt="J B Singh & Sons cargo shipping operations"
-              fill
-              className="object-cover"
-            />
+  // Simple fade in animation
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("fade-in");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (textRef.current) observer.observe(textRef.current);
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <Section ref={sectionRef} className="relative overflow-hidden py-16 md:py-20">
+      {/* Background Video - Full vibrancy, no overlay */}
+      <div className="absolute inset-0 overflow-hidden">
+        <video
+          ref={videoRef}
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover"
+        >
+          <source
+            src="/videos/3309765-uhd_3840_2160_30fps.mp4"
+            type="video/mp4"
+          />
+        </video>
+      </div>
+
+      <Container className="relative z-10">
+        <div className="max-w-5xl mx-auto">
+          {/* Text Content with enhanced shadows for readability */}
+          <div ref={textRef} className="text-center opacity-0 transition-all duration-1000">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)]">
+              Driving Growth Beyond Borders
+            </h2>
+            <p className="text-white text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-8 drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]">
+              J B Singh & Sons has operated since 2003 with a clear focus: dependable freight
+              movement supported by strong processes, technical skill, and transparent communication.
+              We manage complex cargo with disciplined execution and industry-aligned practices
+              that help businesses move goods without delays or compliance issues.
+            </p>
+            <Link href="/about">
+              <Button
+                size="lg"
+                className="bg-primary-orange hover:bg-red-600 text-white font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+              >
+                Discover Our Story
+              </Button>
+            </Link>
           </div>
         </div>
-      </div>
+      </Container>
     </Section>
   );
 }
