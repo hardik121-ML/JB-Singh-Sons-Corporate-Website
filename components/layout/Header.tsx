@@ -23,9 +23,16 @@ export default function Header() {
   // Handle smooth scroll for anchor links
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (href.startsWith("/#")) {
-      e.preventDefault();
       const targetId = href.replace("/#", "");
-      scrollToSection(targetId);
+
+      // Only prevent default and scroll if we're already on the homepage
+      // Otherwise, let Next.js navigate to the homepage with the hash
+      if (isHomepage) {
+        e.preventDefault();
+        scrollToSection(targetId);
+      }
+      // If not on homepage, let the default navigation happen (Next.js will navigate to /#section)
+
       setIsMobileMenuOpen(false);
     }
   };
