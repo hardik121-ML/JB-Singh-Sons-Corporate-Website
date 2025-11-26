@@ -53,7 +53,7 @@ export default function ServicesGrid() {
   };
 
   // Get visible services for carousel (3 at a time on desktop, 1 on mobile)
-  const getVisibleServices = (services: typeof coreServices, currentIndex: number, count: number = 3) => {
+  const getVisibleServices = (services: typeof SERVICES, currentIndex: number, count: number = 3) => {
     const visible = [];
     for (let i = 0; i < count; i++) {
       visible.push(services[(currentIndex + i) % services.length]);
