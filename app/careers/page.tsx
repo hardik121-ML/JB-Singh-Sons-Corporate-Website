@@ -3,7 +3,6 @@
 import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Image from "next/image";
 import Section from "@/components/ui/Section";
 import FloatingOrbs from "@/components/ui/FloatingOrbs";
 import { Card, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/Card";
@@ -95,16 +94,7 @@ export default function CareersPage() {
         <div ref={contentRef} className="relative z-10">
           {!hasJobs ? (
             <div className="max-w-4xl mx-auto text-center">
-              <div className="careers-card glass-card rounded-2xl p-12 relative overflow-hidden">
-                {/* Background Image */}
-                <Image
-                  src="/images/placeholders/Hiring.avif"
-                  alt="Hiring background"
-                  fill
-                  className="object-cover"
-                />
-                {/* Dark Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#0A0A0A]/85 to-[#0A0A0A]/70" />
+              <div className="careers-card rounded-2xl p-12 relative overflow-hidden bg-[#0A0A0A]">
 
                 {/* Content */}
                 <div className="relative z-10">

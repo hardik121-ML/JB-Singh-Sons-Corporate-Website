@@ -76,17 +76,17 @@ export default function AboutStackedSection() {
   }, [totalCards]);
 
   return (
-    <section className="relative bg-white py-16 md:py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative bg-[#0A0A0A] py-16 md:py-24 overflow-clip">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-0">
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">
           <p className="text-primary-orange font-semibold text-sm uppercase tracking-wider mb-3">
             About Us
           </p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0A0A0A] mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
             Built on Discipline.<br className="hidden md:block" /> Driven by Expertise.
           </h2>
-          <p className="text-lg text-[#4B5563] max-w-3xl mx-auto">
+          <p className="text-lg text-white/70 max-w-3xl mx-auto">
             Since 2003, J B Singh & Sons has delivered reliable logistics through structured
             processes, technical expertise, and a commitment to operational excellence.
           </p>
@@ -112,9 +112,10 @@ export default function AboutStackedSection() {
                   paddingTop,
                   paddingBottom,
                   marginTop,
+                  zIndex: index + 1,
                 }}
               >
-                <div data-card-inner className="grid grid-cols-8 bg-white border-t border-[#0A0A0A]/20 pointer-events-auto">
+                <div data-card-inner className="grid grid-cols-8 bg-[#0A0A0A] border-t border-white/20 pointer-events-auto">
                   {/* Number column */}
                   <div className="col-span-2 md:col-span-1 pt-8 md:pt-10">
                     <p className="text-2xl md:text-3xl font-medium text-primary-orange">
@@ -128,7 +129,7 @@ export default function AboutStackedSection() {
                       data-about-title
                       className="col-span-6 md:col-span-4 py-8 md:py-10"
                     >
-                      <h4 className="text-2xl md:text-3xl lg:text-4xl font-medium text-[#0A0A0A] leading-tight">
+                      <h4 className="text-2xl md:text-3xl lg:text-4xl font-medium text-white leading-tight">
                         {card.title}
                       </h4>
                     </div>
@@ -136,7 +137,7 @@ export default function AboutStackedSection() {
                       data-about-content
                       className="col-span-6 md:col-span-5 pb-12 md:pb-16"
                     >
-                      <p className="text-base md:text-lg lg:text-xl text-[#0A0A0A]/70 leading-relaxed">
+                      <p className="text-base md:text-lg lg:text-xl text-white/70 leading-relaxed">
                         {card.description}
                       </p>
                     </div>

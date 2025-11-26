@@ -111,18 +111,11 @@ export default function Hero() {
           onUpdate: (self) => {
             const progress = self.progress;
 
-            // Logo moves to top-left corner (header logo position)
+            // Logo fades out on scroll (no position change)
             if (logoRef.current) {
-              const targetX = -(window.innerWidth / 2) + 120;
-              const targetY = -window.innerHeight / 2 + 100;
-              const targetScale = 0.35;
-
               gsap.set(logoRef.current, {
-                x: progress * targetX,
-                y: progress * targetY,
-                scale: 1 - (progress * (1 - targetScale)),
-                opacity: progress < 0.95 ? 1 : 1 - ((progress - 0.95) / 0.05),
-                zIndex: 60
+                opacity: 1 - progress * 1.5,
+                y: progress * -100,
               });
             }
 
@@ -199,6 +192,8 @@ export default function Hero() {
             background: 'radial-gradient(ellipse 50% 50% at center, rgba(0, 0, 0, 0.4) 0%, transparent 100%)'
           }}
         ></div>
+        {/* Mobile-only darker overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/25 md:bg-transparent"></div>
       </div>
 
       <Container className="relative z-10">
@@ -208,17 +203,14 @@ export default function Hero() {
             ref={logoRef}
             className="flex justify-center mb-8"
           >
-            <div className="relative w-[180px] h-[180px] md:w-[216px] md:h-[216px] rounded-full bg-white flex items-center justify-center shadow-2xl overflow-hidden">
-              <div className="relative w-[180px] h-[180px] md:w-[216px] md:h-[216px] flex items-center justify-center" style={{ marginTop: '50px', marginLeft: '5px', transform: 'scale(1.3)' }}>
-                <Image
-                  src="/Logo.svg"
-                  alt="J B Singh & Sons Logo"
-                  width={240}
-                  height={240}
-                  className="w-full h-full"
-                  priority
-                />
-              </div>
+            <div className="relative w-[140px] h-[140px] md:w-[180px] md:h-[180px]">
+              <Image
+                src="/Logo.svg"
+                alt="J B Singh & Sons Logo"
+                fill
+                className="object-contain drop-shadow-2xl"
+                priority
+              />
             </div>
           </div>
 
@@ -245,12 +237,12 @@ export default function Hero() {
           {/* Sub-headline */}
           <p
             ref={subheadlineRef}
-            className="text-base md:text-lg lg:text-xl text-white/80 mb-12 max-w-3xl mx-auto leading-relaxed"
+            className="text-lg md:text-xl lg:text-2xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed"
             style={{
-              textShadow: '0 2px 8px rgba(0, 0, 0, 0.1)'
+              textShadow: '0 2px 12px rgba(0, 0, 0, 0.3)'
             }}
           >
-            {HERO_CONTENT.subheadline}
+            {HERO_CONTENT.subheadline} {HERO_CONTENT.supportingLine}
           </p>
 
           {/* CTA Button */}

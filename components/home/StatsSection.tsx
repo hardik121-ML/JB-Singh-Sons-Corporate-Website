@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import Link from "next/link";
 import Section from "@/components/ui/Section";
 import Button from "@/components/ui/Button";
+import { AirplaneTilt, Boat, Truck } from "@phosphor-icons/react";
 
 export default function StatsSection() {
   // Counter animation
@@ -85,37 +86,13 @@ export default function StatsSection() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           <div className="bg-white/90 backdrop-blur-xl text-center p-6 lg:p-8 rounded-2xl hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl border border-white/40">
             <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#00324B] mb-3">
-              <span className="stat-counter" data-target="200">0</span>+
+              <span className="stat-counter" data-target="20">0</span>+
             </div>
             <div className="text-sm md:text-base text-[#0A0A0A] font-semibold mb-1">
-              Global Destinations
+              Years in Operations
             </div>
             <div className="text-xs md:text-sm text-[#4B5563]">
-              Worldwide logistics network
-            </div>
-          </div>
-
-          <div className="bg-white/90 backdrop-blur-xl text-center p-6 lg:p-8 rounded-2xl hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl border border-white/40">
-            <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#00324B] mb-3">
-              <span className="stat-counter" data-target="150">0</span>+
-            </div>
-            <div className="text-sm md:text-base text-[#0A0A0A] font-semibold mb-1">
-              Expert Team
-            </div>
-            <div className="text-xs md:text-sm text-[#4B5563]">
-              Skilled professionals
-            </div>
-          </div>
-
-          <div className="bg-white/90 backdrop-blur-xl text-center p-6 lg:p-8 rounded-2xl hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl border border-white/40">
-            <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#00324B] mb-3">
-              <span className="stat-counter" data-target="8">0</span>+
-            </div>
-            <div className="text-sm md:text-base text-[#0A0A0A] font-semibold mb-1">
-              Core Services
-            </div>
-            <div className="text-xs md:text-sm text-[#4B5563]">
-              End-to-end solutions
+              Serving clients since 2003
             </div>
           </div>
 
@@ -124,22 +101,48 @@ export default function StatsSection() {
               <span className="stat-counter" data-target="100">0</span>%
             </div>
             <div className="text-sm md:text-base text-[#0A0A0A] font-semibold mb-1">
-              Compliance Rate
+              Regulatory Accuracy
             </div>
             <div className="text-xs md:text-sm text-[#4B5563]">
-              Regulatory adherence
+              Documentation aligned with customs standards
+            </div>
+          </div>
+
+          <div className="bg-white/90 backdrop-blur-xl text-center p-6 lg:p-8 rounded-2xl hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl border border-white/40">
+            <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#00324B] mb-3">
+              <span className="stat-counter" data-target="200">0</span>+
+            </div>
+            <div className="text-sm md:text-base text-[#0A0A0A] font-semibold mb-1">
+              Global Reach
+            </div>
+            <div className="text-xs md:text-sm text-[#4B5563]">
+              Trade lanes across 200+ global markets
+            </div>
+          </div>
+
+          <div className="bg-white/90 backdrop-blur-xl text-center p-6 lg:p-8 rounded-2xl hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl border border-white/40">
+            <div className="flex justify-center items-center gap-3 md:gap-4 mb-3">
+              <AirplaneTilt size={32} weight="duotone" className="text-[#00324B] md:w-10 md:h-10 lg:w-12 lg:h-12" />
+              <Boat size={32} weight="duotone" className="text-primary-orange md:w-10 md:h-10 lg:w-12 lg:h-12" />
+              <Truck size={32} weight="duotone" className="text-[#00324B] md:w-10 md:h-10 lg:w-12 lg:h-12" />
+            </div>
+            <div className="text-sm md:text-base text-[#0A0A0A] font-semibold mb-1">
+              End-to-End Capabilities
+            </div>
+            <div className="text-xs md:text-sm text-[#4B5563]">
+              Air · Sea · Surface coverage
             </div>
           </div>
         </div>
 
-        {/* Discover Our Story CTA */}
+        {/* Read More CTA */}
         <div className="text-center mt-10">
           <Link href="/about">
             <Button
               size="lg"
               className="bg-primary-orange hover:bg-red-600 text-white font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
             >
-              Discover Our Story
+              Read More
             </Button>
           </Link>
         </div>

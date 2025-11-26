@@ -42,7 +42,7 @@ export default function AboutPreview() {
           className="w-full h-full object-cover"
         >
           <source
-            src="/videos/3309765-uhd_3840_2160_30fps.mp4"
+            src="/videos/trusted-section-video.mp4"
             type="video/mp4"
           />
         </video>

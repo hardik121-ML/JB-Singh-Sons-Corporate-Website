@@ -133,24 +133,25 @@ function ServiceCard({ service }: { service: ServiceWithNumber }) {
 
   return (
     <div className="flex-shrink-0 w-[max(20rem,26vmax)]">
-      <div className="h-[clamp(28rem,50vmax,36vmax)] bg-white/10 backdrop-blur-xl border border-white/20 rounded-[max(1.6rem,2vmax)] p-[2.5vmax] flex flex-col justify-between shadow-2xl hover:bg-white/15 transition-all duration-300">
+      <div className="h-[clamp(28rem,50vmax,36vmax)] bg-white/10 backdrop-blur-xl border border-white/20 rounded-[max(1.6rem,2vmax)] p-[2.5vmax] flex flex-col gap-6 shadow-2xl hover:bg-white/15 transition-all duration-300">
         <div>
           <span className="text-[max(1rem,1.2vmax)] text-white/50 font-medium">
             ({service.number})
           </span>
           <p
-            className={`text-[max(1.8rem,2.5vmax)] font-bold ${titleColor} uppercase mt-[1vmax] leading-[110%]`}
+            className={`text-[max(1.6rem,2.2vmax)] font-bold ${titleColor} uppercase mt-[1vmax] leading-[115%] break-words hyphens-auto`}
+            lang="en"
           >
             {service.title}
           </p>
         </div>
-        <div>
-          <p className="text-[max(0.9rem,1.1vmax)] text-white/80 leading-[150%] mb-6 line-clamp-4">
+        <div className="flex-1 flex flex-col justify-end">
+          <p className="text-[max(1rem,1.3vmax)] text-white/80 leading-[160%] mb-6">
             {service.shortDescription}
           </p>
           <Link
             href={service.slug}
-            className="text-white font-medium hover:underline inline-flex items-center gap-2 text-[max(0.9rem,1vmax)] group"
+            className="inline-flex items-center gap-2 text-[max(1rem,1.1vmax)] font-semibold text-white bg-white/10 hover:bg-white/20 px-5 py-3 rounded-xl transition-all duration-300 w-fit group"
           >
             Learn More
             <span className="group-hover:translate-x-1 transition-transform duration-300">

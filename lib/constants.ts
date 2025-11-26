@@ -329,7 +329,8 @@ export const FOOTER_LINKS = {
 export const HERO_CONTENT = {
   badge: "J B Singh & Sons",
   headline: "Reliable Logistics for Cross-Border Trade",
-  subheadline: "End-to-end accurate compliant logistics for complex shipments",
+  subheadline: "End-to-end cargo movement with clear communication and disciplined execution.",
+  supportingLine: "Accurate, compliant logistics for complex shipments.",
   ctaText: "Explore Services",
 };
 
@@ -361,7 +362,7 @@ export const CLIENTS = [
     website: "https://www.aqualloys.com/"
   },
   {
-    name: "Vimal Metal Enterprises",
+    name: "Vimal Tubes",
     industry: "Steel Pipes & Fittings",
     description: "Specialist in duplex steel pipes and butt welding fittings",
     established: "2002",
@@ -406,6 +407,69 @@ export const CLIENTS = [
     name: "Pravin Metal Industries",
     industry: "Metal Processing",
     description: "Industrial metal processing and fabrication solutions",
+    established: null,
+    website: null
+  },
+  {
+    name: "Bhansali Steel (India)",
+    industry: "Stainless Steel",
+    description: "Quality stainless steel products for industrial applications",
+    established: null,
+    website: null
+  },
+  {
+    name: "Madras Metals",
+    industry: "Metal Trading",
+    description: "Established metals trading company serving South India",
+    established: null,
+    website: null
+  },
+  {
+    name: "Nexus Impex",
+    industry: "Import/Export",
+    description: "International trade solutions for metal products",
+    established: null,
+    website: null
+  },
+  {
+    name: "Poonam Enterprises",
+    industry: "Metal Distribution",
+    description: "Comprehensive metal distribution and supply chain solutions",
+    established: null,
+    website: null
+  },
+  {
+    name: "Siddhant Steel",
+    industry: "Steel Trading",
+    description: "Reliable steel trading partner for diverse industries",
+    established: null,
+    website: null
+  },
+  {
+    name: "Ryan Impex",
+    industry: "Import/Export",
+    description: "Global import and export services for industrial goods",
+    established: null,
+    website: null
+  },
+  {
+    name: "B.J Metal & Alloys",
+    industry: "Metal & Alloys",
+    description: "Specialty metals and alloy products supplier",
+    established: null,
+    website: null
+  },
+  {
+    name: "Rajkot Impex",
+    industry: "Import/Export",
+    description: "International trade specialist based in Gujarat",
+    established: null,
+    website: null
+  },
+  {
+    name: "Roshan Metal",
+    industry: "Metal Trading",
+    description: "Quality metal products for industrial applications",
     established: null,
     website: null
   }
