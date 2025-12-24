@@ -19,7 +19,7 @@ export default function SolutionsContent() {
   const gridRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!heroRef.current || !gridRef.current) return;
+    console.log('Solutions page mounted, SOLUTIONS count:', SOLUTIONS.length);
 
     const ctx = gsap.context(() => {
       // Hero content animation
@@ -32,18 +32,21 @@ export default function SolutionsContent() {
       });
 
       // Solution cards stagger reveal
-      gsap.from(".solution-card", {
-        opacity: 0,
-        y: 50,
-        scale: 0.95,
-        duration: 0.6,
-        stagger: 0.1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: gridRef.current,
-          start: "top 80%",
-        },
-      });
+      if (gridRef.current) {
+        gsap.from(".solution-card", {
+          opacity: 0,
+          y: 50,
+          scale: 0.95,
+          duration: 0.6,
+          stagger: 0.1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: gridRef.current,
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+          },
+        });
+      }
     });
 
     return () => ctx.revert();
@@ -134,6 +137,11 @@ export default function SolutionsContent() {
                         alt={image.alt}
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        onError={(e) => {
+                          console.error(`Failed to load image: ${image.src}`);
+                          e.currentTarget.style.display = 'none';
+                        }}
                       />
                     ) : (
                       <div className="w-full h-full flex items-center justify-center">
