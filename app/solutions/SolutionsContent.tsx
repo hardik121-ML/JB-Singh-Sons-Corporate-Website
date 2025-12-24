@@ -31,21 +31,30 @@ export default function SolutionsContent() {
         ease: "power3.out",
       });
 
-      // Solution cards stagger reveal
+      // Solution cards stagger reveal - ensure all cards become visible
       if (gridRef.current) {
-        gsap.from(".solution-card", {
-          opacity: 0,
-          y: 50,
-          scale: 0.95,
-          duration: 0.6,
-          stagger: 0.1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: gridRef.current,
-            start: "top 80%",
-            toggleActions: "play none none reverse",
+        gsap.fromTo(
+          ".solution-card",
+          {
+            opacity: 0,
+            y: 50,
+            scale: 0.95,
           },
-        });
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.6,
+            stagger: 0.15,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: gridRef.current,
+              start: "top 85%",
+              end: "bottom 20%",
+              toggleActions: "play none none none",
+            },
+          }
+        );
       }
     });
 
