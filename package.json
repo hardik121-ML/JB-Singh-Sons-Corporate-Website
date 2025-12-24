@@ -16,7 +16,6 @@
     "postbuild": "next-sitemap"
   },
   "dependencies": {
-    "@emailjs/browser": "^4.4.1",
     "@gsap/react": "^2.1.2",
     "@phosphor-icons/react": "^2.1.10",
     "autoprefixer": "^10.4.22",

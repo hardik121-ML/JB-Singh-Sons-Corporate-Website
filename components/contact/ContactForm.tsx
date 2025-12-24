@@ -2,15 +2,15 @@
 
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import emailjs from "@emailjs/browser";
 import Button from "@/components/ui/Button";
 import Input from "@/components/ui/Input";
 import Textarea from "@/components/ui/Textarea";
 import { ContactFormData } from "@/lib/types";
 
+const WHATSAPP_NUMBER = "919833278188"; // Include country code without + sign
+
 export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
 
   const {
     register,
@@ -19,32 +19,34 @@ export default function ContactForm() {
     formState: { errors },
   } = useForm<ContactFormData>();
 
-  const onSubmit = async (data: ContactFormData) => {
+  const onSubmit = (data: ContactFormData) => {
     setIsSubmitting(true);
-    setSubmitStatus("idle");
 
     try {
-      // EmailJS integration
-      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "your_service_id";
-      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "your_template_id";
-      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "your_public_key";
+      // Format message for WhatsApp
+      const message = `*New Enquiry from Website*
 
-      const templateParams = {
-        from_name: data.name,
-        from_email: data.email,
-        phone: data.phone,
-        company: data.company || "N/A",
-        message: data.message,
-        to_email: "jbsinghnhsons2005@hotmail.com",
-      };
+*Name:* ${data.name}
+*Email:* ${data.email}
+*Phone:* ${data.phone}
+${data.company ? `*Company:* ${data.company}` : ''}
 
-      await emailjs.send(serviceId, templateId, templateParams, publicKey);
+*Message:*
+${data.message}`;
 
-      setSubmitStatus("success");
+      // Encode message for URL
+      const encodedMessage = encodeURIComponent(message);
+
+      // Create WhatsApp URL
+      const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+
+      // Open WhatsApp in new tab
+      window.open(whatsappUrl, '_blank');
+
+      // Reset form after successful redirect
       reset();
     } catch (error) {
       console.error("Form submission error:", error);
-      setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
     }
@@ -147,27 +149,13 @@ export default function ContactForm() {
           className="w-full"
           disabled={isSubmitting}
         >
-          {isSubmitting ? "Sending..." : "Send Message"}
+          {isSubmitting ? "Opening WhatsApp..." : "Send via WhatsApp"}
         </Button>
       </div>
 
-      {/* Status Messages */}
-      {submitStatus === "success" && (
-        <div className="bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-lg">
-          Thank you! Your message has been sent successfully. We'll get back to you soon.
-        </div>
-      )}
-
-      {submitStatus === "error" && (
-        <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg">
-          Sorry, there was an error sending your message. Please try again or email us directly at
-          jbsinghnhsons2005@hotmail.com
-        </div>
-      )}
-
-      {/* Email JS Configuration Note */}
-      <p className="text-xs text-gray-400 text-center">
-        Note: Configure EmailJS credentials in .env.local for form to work
+      {/* WhatsApp Info Note */}
+      <p className="text-xs text-gray-500 text-center">
+        Clicking submit will open WhatsApp with your message pre-filled
       </p>
     </form>
   );

@@ -46,17 +46,6 @@ export default function Hero() {
         y: 10,
       });
 
-      // Add Ken Burns effect to video (slow zoom)
-      if (videoRef.current) {
-        gsap.to(videoRef.current, {
-          scale: 1.15,
-          duration: 30,
-          ease: "none",
-          repeat: -1,
-          yoyo: true,
-        });
-      }
-
       // Create intro timeline that plays automatically
       const introTl = gsap.timeline({
         defaults: { ease: "power2.out" },

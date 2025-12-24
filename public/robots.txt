@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://jbsingh-website.vercel.app
+Host: https://jbsingh.com
 
 # Sitemaps
-Sitemap: https://jbsingh-website.vercel.app/sitemap.xml
+Sitemap: https://jbsingh.com/sitemap.xml
