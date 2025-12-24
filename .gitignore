@@ -41,3 +41,4 @@ public/Logistics-20251119T135955Z-1-001/**/*.crdownload
 
 # Windows Zone.Identifier files
 *:Zone.Identifier
+*.backup

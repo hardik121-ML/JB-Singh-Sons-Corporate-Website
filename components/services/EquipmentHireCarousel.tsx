@@ -119,6 +119,9 @@ export default function EquipmentHireCarousel() {
         >
           {extendedItems.map((item, index) => {
             const Icon = item.icon;
+            // Determine if this image should be prioritized (first set of visible items)
+            const isInitiallyVisible = index >= equipmentItems.length && index < equipmentItems.length + slidesPerView;
+
             return (
               <div
                 key={`${item.title}-${index}`}
@@ -132,6 +135,9 @@ export default function EquipmentHireCarousel() {
                       alt={item.title}
                       fill
                       className="object-cover"
+                      loading={isInitiallyVisible ? "eager" : "lazy"}
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
+                      quality={85}
                     />
                     <div className="absolute top-3 left-3 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-lg flex items-center justify-center shadow-sm">
                       <Icon size={24} weight="duotone" className="text-primary-orange" />
