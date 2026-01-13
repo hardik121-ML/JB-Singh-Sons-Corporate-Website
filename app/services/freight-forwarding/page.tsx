@@ -86,7 +86,7 @@ export default function FreightForwardingPage() {
       <section ref={heroRef} className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/Logistics-20251119T135955Z-1-001/Cargo-Logistics/chris-pagan-sfjS-FglvU4-unsplash.jpg"
+            src="/Logistics-20251119T135955Z-1-001/Cargo-Logistics/chris-pagan-sfjS-FglvU4-unsplash.webp"
             alt="International freight forwarding"
             fill
             className="object-cover"

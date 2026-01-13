@@ -51,7 +51,7 @@ export default function TransportationContent() {
       <section ref={heroRef} className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/Logistics-20251119T135955Z-1-001/Cargo-Logistics/venti-views-FPKnAO-CF6M-unsplash.jpg"
+            src="/Logistics-20251119T135955Z-1-001/Cargo-Logistics/venti-views-FPKnAO-CF6M-unsplash.webp"
             alt="Cargo transportation"
             fill
             className="object-cover"

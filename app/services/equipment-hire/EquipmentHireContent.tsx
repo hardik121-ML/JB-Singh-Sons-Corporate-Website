@@ -64,7 +64,7 @@ export default function EquipmentHireContent() {
       <section ref={heroRef} className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/Logistics-20251119T135955Z-1-001/Cargo-Logistics/kurt-cotoaga-MP6FMO8khn4-unsplash.jpg"
+            src="/Logistics-20251119T135955Z-1-001/Cargo-Logistics/kurt-cotoaga-MP6FMO8khn4-unsplash.webp"
             alt="Heavy equipment and cranes"
             fill
             className="object-cover"

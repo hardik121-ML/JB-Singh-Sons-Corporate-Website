@@ -1,0 +1,106 @@
+{
+  "passed": 14,
+  "failed": 2,
+  "details": [
+    {
+      "name": "Homepage",
+      "url": "http://localhost:3000/",
+      "status": "failed",
+      "issues": [
+        "4 images failed to load"
+      ]
+    },
+    {
+      "name": "About",
+      "url": "http://localhost:3000/about",
+      "status": "passed",
+      "issues": []
+    },
+    {
+      "name": "Services",
+      "url": "http://localhost:3000/services",
+      "status": "passed",
+      "issues": []
+    },
+    {
+      "name": "Freight Forwarding",
+      "url": "http://localhost:3000/services/freight-forwarding",
+      "status": "passed",
+      "issues": []
+    },
+    {
+      "name": "Custom Clearance",
+      "url": "http://localhost:3000/services/custom-clearance",
+      "status": "passed",
+      "issues": []
+    },
+    {
+      "name": "Marine Logistics",
+      "url": "http://localhost:3000/services/marine-logistics",
+      "status": "passed",
+      "issues": []
+    },
+    {
+      "name": "Transportation",
+      "url": "http://localhost:3000/services/transportation",
+      "status": "passed",
+      "issues": []
+    },
+    {
+      "name": "Equipment Hire",
+      "url": "http://localhost:3000/services/equipment-hire",
+      "status": "passed",
+      "issues": []
+    },
+    {
+      "name": "Warehousing",
+      "url": "http://localhost:3000/services/warehousing-distribution",
+      "status": "passed",
+      "issues": []
+    },
+    {
+      "name": "Domestic Express",
+      "url": "http://localhost:3000/services/domestic-express",
+      "status": "passed",
+      "issues": []
+    },
+    {
+      "name": "Cross Trade",
+      "url": "http://localhost:3000/services/cross-trade-services",
+      "status": "passed",
+      "issues": []
+    },
+    {
+      "name": "Solutions",
+      "url": "http://localhost:3000/solutions",
+      "status": "failed",
+      "issues": [
+        "3 images failed to load"
+      ]
+    },
+    {
+      "name": "Careers",
+      "url": "http://localhost:3000/careers",
+      "status": "passed",
+      "issues": []
+    },
+    {
+      "name": "Contact",
+      "url": "http://localhost:3000/contact",
+      "status": "passed",
+      "issues": []
+    },
+    {
+      "name": "Terms",
+      "url": "http://localhost:3000/terms-and-conditions",
+      "status": "passed",
+      "issues": []
+    },
+    {
+      "name": "Privacy",
+      "url": "http://localhost:3000/privacy-policy",
+      "status": "passed",
+      "issues": []
+    }
+  ]
+}

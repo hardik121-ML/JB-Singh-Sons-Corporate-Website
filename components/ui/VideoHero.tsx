@@ -107,6 +107,7 @@ export default function VideoHero({
           playsInline
           className="w-full h-[120%] object-cover"
         >
+          <source src={videoSrc.replace('.mp4', '.webm')} type="video/webm" />
           <source src={videoSrc} type="video/mp4" />
         </video>
         {overlay !== "none" && (

@@ -51,7 +51,7 @@ export default function MarineLogisticsContent() {
       <section ref={heroRef} className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/Logistics-20251119T135955Z-1-001/Cargo-Logistics/rinson-chory-2vPGGOU-wLA-unsplash.jpg"
+            src="/Logistics-20251119T135955Z-1-001/Cargo-Logistics/rinson-chory-2vPGGOU-wLA-unsplash.webp"
             alt="Marine logistics and shipping"
             fill
             className="object-cover"

@@ -9,37 +9,37 @@ const equipmentItems = [
     title: "Cranes",
     description: "Heavy-duty cranes for lifting and placement operations across ports and project sites",
     icon: Crane,
-    image: "/Logistics-20251119T135955Z-1-001/Cargo-Logistics/kurt-cotoaga-MP6FMO8khn4-unsplash.jpg",
+    image: "/Logistics-20251119T135955Z-1-001/Cargo-Logistics/kurt-cotoaga-MP6FMO8khn4-unsplash.webp",
   },
   {
     title: "Forklifts",
     description: "Industrial forklifts for efficient yard and warehouse cargo movement",
     icon: Package,
-    image: "/Logistics-20251119T135955Z-1-001/Cargo-Logistics/pexels-elevate-1267338.jpg",
+    image: "/Logistics-20251119T135955Z-1-001/Cargo-Logistics/pexels-elevate-1267338.webp",
   },
   {
     title: "Loaders",
     description: "Versatile loaders and related handling equipment for diverse operations",
     icon: Truck,
-    image: "/Logistics-20251119T135955Z-1-001/Cargo-Logistics/pexels-tomfisk-3063470.jpg",
+    image: "/Logistics-20251119T135955Z-1-001/Cargo-Logistics/pexels-tomfisk-3063470.webp",
   },
   {
     title: "Prime Movers & Trailers",
     description: "Heavy transport vehicles for moving oversized and heavy cargo",
     icon: Truck,
-    image: "/Logistics-20251119T135955Z-1-001/Cargo-Logistics/venti-views-FPKnAO-CF6M-unsplash.jpg",
+    image: "/Logistics-20251119T135955Z-1-001/Cargo-Logistics/venti-views-FPKnAO-CF6M-unsplash.webp",
   },
   {
     title: "Lifting Accessories",
     description: "Axles, spreader beams, mats, and specialized lifting accessories",
     icon: Wrench,
-    image: "/Logistics-20251119T135955Z-1-001/Cargo-Logistics/pexels-tomfisk-3057963.jpg",
+    image: "/Logistics-20251119T135955Z-1-001/Cargo-Logistics/pexels-tomfisk-3057963.webp",
   },
   {
     title: "Lift Planning Support",
     description: "Expert coordination with project and site teams for safe lift operations",
     icon: Users,
-    image: "/Logistics-20251119T135955Z-1-001/Cargo-Logistics/pexels-tomfisk-3075996.jpg",
+    image: "/Logistics-20251119T135955Z-1-001/Cargo-Logistics/pexels-tomfisk-3075996.webp",
   },
 ];
 

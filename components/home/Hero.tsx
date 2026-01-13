@@ -170,6 +170,10 @@ export default function Hero() {
           style={{ objectPosition: 'center 35%' }}
         >
           <source
+            src="/videos/hero-video.webm"
+            type="video/webm"
+          />
+          <source
             src="/videos/hero-video.mp4"
             type="video/mp4"
           />

@@ -42,6 +42,10 @@ export default function AboutPreview() {
           className="w-full h-full object-cover"
         >
           <source
+            src="/videos/trusted-section-video.webm"
+            type="video/webm"
+          />
+          <source
             src="/videos/trusted-section-video.mp4"
             type="video/mp4"
           />

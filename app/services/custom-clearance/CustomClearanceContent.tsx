@@ -64,7 +64,7 @@ export default function CustomClearanceContent() {
       <section ref={heroRef} className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/Logistics-20251119T135955Z-1-001/Cargo-Logistics/pexels-tomfisk-3057963.jpg"
+            src="/Logistics-20251119T135955Z-1-001/Cargo-Logistics/pexels-tomfisk-3057963.webp"
             alt="Port operations background"
             fill
             className="object-cover"

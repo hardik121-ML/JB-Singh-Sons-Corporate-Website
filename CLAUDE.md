@@ -76,7 +76,7 @@ Metadata exported from `layout.tsx` instead of `page.tsx`.
 ### Component Structure
 - `/components/layout/` - Header, Footer, ClientLayout (wraps scroll context)
 - `/components/ui/` - Button, Card, Container, Section, Input, Textarea, VideoHero, FloatingCTA, FloatingOrbs
-- `/components/home/` - Hero, StatsSection, ServicesGrid (carousel), ClientsSection, AboutPreview, SolutionsSection, CareersSection, ContactSection
+- `/components/home/` - Hero, StatsSection, ServicesGrid (carousel), ServicesHorizontalScroll, ClientsSection, CertificationsSection, AboutPreview, SolutionsSection, CareersSection, ContactSection, StatsBlock
 - `/components/services/` - ServiceTemplate, AnimatedCapabilities, CustomClearanceFlowchart, EquipmentHireCarousel
 - `/components/about/` - AboutStackedSection
 - `/components/contact/` - ContactForm (WhatsApp integration)
@@ -180,6 +180,32 @@ Images are in `/public/Logistics-20251119T135955Z-1-001/` directory. Use Next.js
 
 ### Glassmorphism
 Custom glass styles defined in `tailwind.config.ts` - use `.glass-card` class or Tailwind utilities: `bg-glass-white`, `backdrop-blur-md`, `border-glass-border`, `shadow-glass`.
+
+## Performance Optimization
+
+### Media Files
+**Videos**: Must provide both WebM and MP4 formats for browser compatibility:
+```tsx
+<video>
+  <source src="/videos/video-name.webm" type="video/webm" />
+  <source src="/videos/video-name.mp4" type="video/mp4" />
+</video>
+```
+- WebM for modern browsers (smaller, 50-70% size reduction)
+- MP4 as fallback for older Safari/iOS
+- Target: 2-4 MB max for hero videos
+- Use CRF 35-38 for WebM conversion
+
+**Images**:
+- Next.js `Image` component auto-converts to WebP
+- Source images should be optimized before adding to repo
+- Target: Under 500KB per image
+- Use `priority` prop for above-the-fold images
+
+### Video Components
+- Videos in `/public/videos/`: `hero-video`, `trusted-section-video`, `light-orbs-animation`
+- VideoHero component handles responsive video backgrounds
+- No Ken Burns effect on hero videos (causes jittery animation)
 
 ## Deployment
 

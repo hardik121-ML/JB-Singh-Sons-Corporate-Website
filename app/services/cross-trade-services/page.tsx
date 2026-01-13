@@ -86,7 +86,7 @@ export default function CrossTradeServicesPage() {
       <section ref={heroRef} className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/Logistics-20251119T135955Z-1-001/Cargo-Logistics/pexels-tomfisk-3063470.jpg"
+            src="/Logistics-20251119T135955Z-1-001/Cargo-Logistics/pexels-tomfisk-3063470.webp"
             alt="Global cross trade logistics"
             fill
             className="object-cover"
