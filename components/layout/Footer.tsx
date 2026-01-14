@@ -141,17 +141,17 @@ export default function Footer() {
             <p className="text-sm text-[#9CA3AF]">
               © {currentYear} {COMPANY_INFO.name}. All rights reserved.
             </p>
-            <div className="flex space-x-6">
-              {FOOTER_LINKS.legal.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="text-sm text-[#9CA3AF] hover:text-white transition-colors"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </div>
+            <p className="text-sm text-[#9CA3AF]">
+              Website made by{" "}
+              <a
+                href="https://www.materiallab.io"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary-orange hover:text-white transition-colors"
+              >
+                Material Lab
+              </a>
+            </p>
           </div>
         </div>
       </Container>

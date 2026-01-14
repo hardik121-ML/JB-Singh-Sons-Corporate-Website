@@ -6,7 +6,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Corporate logistics website for **J B Singh & Sons** (Mumbai, est. 2003) - Next.js 14 App Router, TypeScript, Tailwind CSS.
 
-- **Production**: https://jbsingh-website.vercel.app
+- **Production Domain**: https://jbsingh.com
+- **Vercel Staging**: https://jbsingh-website.vercel.app
 - **Repository**: https://github.com/hardik121-ML/JB-Singh-Sons-Corporate-Website
 
 ## Commands
@@ -18,8 +19,9 @@ npm run start        # Run production build locally
 npm run lint         # Run ESLint
 
 # Testing (Puppeteer-based)
-node test-all-pages.js    # Full page testing with screenshots
-node screenshot.js         # Single page screenshot utility
+node test-all-pages.js           # Full page testing with screenshots
+node screenshot.js               # Single page screenshot utility
+node pre-publish-test-simple.js  # Pre-publish validation (all pages, SEO, media)
 
 # Troubleshooting
 rm -rf .next && npm run dev  # Clear Next.js cache for style issues
@@ -79,7 +81,14 @@ Metadata exported from `layout.tsx` instead of `page.tsx`.
 - `/components/home/` - Hero, StatsSection, ServicesGrid (carousel), ServicesHorizontalScroll, ClientsSection, CertificationsSection, AboutPreview, SolutionsSection, CareersSection, ContactSection, StatsBlock
 - `/components/services/` - ServiceTemplate, AnimatedCapabilities, CustomClearanceFlowchart, EquipmentHireCarousel
 - `/components/about/` - AboutStackedSection
-- `/components/contact/` - ContactForm (WhatsApp integration)
+- `/components/contact/` - ContactForm (WhatsApp CTA with contact cards)
+- `/components/StructuredData.tsx` - JSON-LD schema for SEO (invisible to users, read by search engines/LLMs)
+
+**Contact Form Pattern**: Uses WhatsApp integration without traditional form inputs:
+- Displays 3 clickable contact cards (Phone, Mobile, Email)
+- Single WhatsApp CTA button with pre-filled professional message
+- Message: "Good day, I would like to discuss my logistics requirements with your team. Let's connect."
+- Opens `wa.me/919833278188` in new tab
 
 **Icon Loading Pattern**: Components dynamically load Phosphor icons by name via `import * as PhosphorIcons from "@phosphor-icons/react"` then accessing as `PhosphorIcons[iconName]`.
 
@@ -150,10 +159,45 @@ Create `.env.local` in project root:
 
 ```env
 # Sitemap generation
-SITE_URL=https://jbsingh-website.vercel.app
+SITE_URL=https://jbsingh.com
 ```
 
 Contact form uses WhatsApp integration (redirects to wa.me/919833278188) - no environment variables needed.
+
+## SEO & Discoverability
+
+### Metadata Configuration
+**Root Layout** (`app/layout.tsx`) includes comprehensive metadata:
+- OpenGraph tags with logo image for social sharing
+- Twitter card support
+- Enhanced keywords for search engines
+- Google Bot directives for rich snippets
+
+### Structured Data (JSON-LD)
+**StructuredData component** (`/components/StructuredData.tsx`) provides machine-readable business info:
+- Organization schema with both office addresses
+- Service catalog (all 6 core services)
+- Contact information for rich search results
+- Invisible to users, read only by search engines and LLMs
+- Embedded in `<head>` of every page via root layout
+
+### robots.txt Configuration
+Located at `/public/robots.txt` - explicitly allows AI/LLM crawlers:
+- **GPTBot** (ChatGPT)
+- **Claude-Web** (Claude AI)
+- **CCBot** (Common Crawl - used by many AIs)
+- **PerplexityBot** (Perplexity AI)
+- **Google-Extended** (Google's AI training)
+- **Applebot-Extended** (Apple Intelligence)
+- **anthropic-ai** (Anthropic)
+
+This enables LLMs to discover and cite the business when users ask about logistics services in Mumbai.
+
+### Footer Branding
+Footer includes "Website made by Material Lab" link (only "Material Lab" is clickable/highlighted):
+- Links to https://www.materiallab.io
+- Opens in new tab
+- Legal pages (Terms & Privacy) hidden from footer but still accessible via direct URL
 
 ## Types
 
@@ -175,8 +219,18 @@ useEffect(() => {
 }, []);
 ```
 
-### Image Paths
-Images are in `/public/Logistics-20251119T135955Z-1-001/` directory. Use Next.js `Image` component with `fill` for backgrounds, `priority` for hero images.
+### Media Paths & Optimization
+**Images**: Service images in `/public/Logistics-20251119T135955Z-1-001/Cargo-Logistics/`
+- All service hero images are **WebP format** (8 images optimized)
+- Original JPG files kept as backup
+- Use Next.js `Image` component with `fill` for backgrounds, `priority` for hero images
+- Solutions page uses **AVIF format** images (9 images in `/public/images/placeholders/`)
+
+**Videos**: All in `/public/videos/`
+- `hero-video.webm` (4.1 MB) + `hero-video.mp4` (11 MB fallback)
+- `trusted-section-video.webm` (3.2 MB) + `trusted-section-video.mp4` (10 MB fallback)
+- `3309765-uhd_3840_2160_30fps.webm` (0.8 MB) + `.mp4` (43 MB fallback)
+- Always use WebM first, MP4 as fallback for Safari/iOS compatibility
 
 ### Glassmorphism
 Custom glass styles defined in `tailwind.config.ts` - use `.glass-card` class or Tailwind utilities: `bg-glass-white`, `backdrop-blur-md`, `border-glass-border`, `shadow-glass`.
@@ -202,12 +256,70 @@ Custom glass styles defined in `tailwind.config.ts` - use `.glass-card` class or
 - Target: Under 500KB per image
 - Use `priority` prop for above-the-fold images
 
-### Video Components
-- Videos in `/public/videos/`: `hero-video`, `trusted-section-video`, `light-orbs-animation`
-- VideoHero component handles responsive video backgrounds
+### Video Implementation
+All video tags must include WebM with MP4 fallback:
+```tsx
+<video autoPlay muted loop playsInline>
+  <source src="/videos/hero-video.webm" type="video/webm" />
+  <source src="/videos/hero-video.mp4" type="video/mp4" />
+</video>
+```
+- Browser serves WebM to Chrome/Firefox/Edge (smaller file)
+- Falls back to MP4 for Safari/iOS
+- VideoHero component at `/components/ui/VideoHero.tsx` automatically handles format switching via `videoSrc.replace('.mp4', '.webm')`
 - No Ken Burns effect on hero videos (causes jittery animation)
+
+## Testing & Quality Assurance
+
+**Pre-Publish Testing**: Run `node pre-publish-test-simple.js` before deployment
+- Tests all 16 pages (HTTP 200 status)
+- Validates SEO metadata (titles, descriptions)
+- Checks image loading (WebP/AVIF support)
+- Verifies video sources (WebM + MP4 fallbacks)
+- Validates internal links
+- Reports saved to `test-report.json`
+- Summary in `puppeteer_summary.md`
+
+**Expected Results**:
+- All pages return 200 status
+- All images in WebP/AVIF format
+- Videos use dual WebM/MP4 sources
+- Lazy-loaded images below fold (normal behavior)
 
 ## Deployment
 
-Platform: Vercel (auto-deploy on push to main)
+**Platform**: Vercel (auto-deploy on push to main via SSH)
+
+**SSH Setup**:
+```bash
+ssh-add ~/.ssh/id_ed25519  # Load SSH key
+git remote set-url origin git@github.com:hardik121-ML/JB-Singh-Sons-Corporate-Website.git
+git push origin main
+```
+
+**Process**:
+1. Commit changes with descriptive message
+2. Push to GitHub main branch
+3. Vercel auto-deploys (2-3 minutes)
+4. Production: https://jbsingh.com (custom domain)
+5. Staging: https://jbsingh-website.vercel.app
+
+**Post-Deploy Verification**:
+- Check Vercel dashboard for build status
+- Verify WebM videos load on Chrome
+- Verify MP4 fallbacks work on Safari
+- Test WhatsApp CTA button functionality
+- Check robots.txt accessible at https://jbsingh.com/robots.txt
+- Verify structured data with Google Rich Results Test
+
 Sitemap auto-generates via `postbuild` script using `next-sitemap`
+
+## Google Analytics (Optional)
+
+Google Analytics is not currently configured. To add tracking:
+
+1. Get Measurement ID from https://analytics.google.com (format: `G-XXXXXXXXXX`)
+2. Add Google Analytics script to `app/layout.tsx` in `<head>` section
+3. Create `.env.local` with `NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX`
+
+This will enable visitor tracking, traffic analytics, and conversion monitoring.

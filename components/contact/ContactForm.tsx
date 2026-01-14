@@ -99,10 +99,6 @@ export default function ContactForm() {
             <span>Chat on WhatsApp</span>
           </span>
         </Button>
-
-        <p className="text-xs text-gray-500 text-center leading-relaxed">
-          Click to open WhatsApp with a pre-filled message. Available during business hours: Monday - Saturday, 9:00 AM - 6:00 PM IST
-        </p>
       </div>
     </div>
   );
